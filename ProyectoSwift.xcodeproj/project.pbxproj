@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
 		9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DB202B28610090D585 /* AppDelegate.swift */; };
 		9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DD202B28610090D585 /* ViewController.swift */; };
 		9AE0F7E1202B28610090D585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DF202B28610090D585 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		9AE0F7D8202B28610090D585 /* ProyectoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0F7DB202B28610090D585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE0F7DD202B28610090D585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				9AE0F7E2202B28610090D585 /* Assets.xcassets */,
 				9AE0F7E4202B28610090D585 /* LaunchScreen.storyboard */,
 				9AE0F7E7202B28610090D585 /* Info.plist */,
+				0B02CA6520325D53006D02FF /* RegistroViewController.swift */,
 			);
 			path = ProyectoSwift;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
+				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
 				9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +431,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ProyectoSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JL.ProyectoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,7 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ProyectoSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JL.ProyectoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
