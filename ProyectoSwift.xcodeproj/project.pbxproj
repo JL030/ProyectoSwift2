@@ -13,6 +13,7 @@
 		9ABAE1552045745900A5F56E /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1542045745900A5F56E /* OnHttpResponse.swift */; };
 		9ABAE1572045746400A5F56E /* ClienteHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1562045746400A5F56E /* ClienteHttp.swift */; };
 		9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1632045784700A5F56E /* Ejemplo.swift */; };
+		9ABAE1662045790A00A5F56E /* YeehCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1652045790A00A5F56E /* YeehCell.swift */; };
 		9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DB202B28610090D585 /* AppDelegate.swift */; };
 		9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DD202B28610090D585 /* ViewController.swift */; };
 		9AE0F7E1202B28610090D585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DF202B28610090D585 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		9ABAE1542045745900A5F56E /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnHttpResponse.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/OnHttpResponse.swift"; sourceTree = "<group>"; };
 		9ABAE1562045746400A5F56E /* ClienteHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClienteHttp.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/ClienteHttp.swift"; sourceTree = "<group>"; };
 		9ABAE1632045784700A5F56E /* Ejemplo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejemplo.swift; sourceTree = "<group>"; };
+		9ABAE1652045790A00A5F56E /* YeehCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YeehCell.swift; path = "../../../Mis Documentos/Proyecto/ProyectoSwift2/ProyectoSwift/YeehCell.swift"; sourceTree = "<group>"; };
 		9AE0F7D8202B28610090D585 /* ProyectoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0F7DB202B28610090D585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE0F7DD202B28610090D585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		9ABAE1622045783700A5F56E /* Modelo */ = {
 			isa = PBXGroup;
 			children = (
+				9ABAE1652045790A00A5F56E /* YeehCell.swift */,
 				9ABAE1632045784700A5F56E /* Ejemplo.swift */,
 			);
 			path = Modelo;
@@ -303,6 +306,7 @@
 			files = (
 				9ABAE1532045740200A5F56E /* RestJsonUtil.swift in Sources */,
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
+				9ABAE1662045790A00A5F56E /* YeehCell.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
 				9ABAE1572045746400A5F56E /* ClienteHttp.swift in Sources */,
 				9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */,
