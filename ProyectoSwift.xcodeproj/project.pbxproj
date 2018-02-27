@@ -44,7 +44,7 @@
 		9ABAE1522045740200A5F56E /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestJsonUtil.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/RestJsonUtil.swift"; sourceTree = "<group>"; };
 		9ABAE1542045745900A5F56E /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnHttpResponse.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/OnHttpResponse.swift"; sourceTree = "<group>"; };
 		9ABAE1562045746400A5F56E /* ClienteHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClienteHttp.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/ClienteHttp.swift"; sourceTree = "<group>"; };
-		9ABAE15A2045756F00A5F56E /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = "../../../Mis Documentos/Proyecto/ProyectoSwift2/ProyectoSwift/Cell.swift"; sourceTree = "<group>"; };
+		9ABAE15E2045774200A5F56E /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = "../../../Mis Documentos/Proyecto/ProyectoSwift2/ProyectoSwift/Cell.swift"; sourceTree = "<group>"; };
 		9AE0F7D8202B28610090D585 /* ProyectoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0F7DB202B28610090D585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE0F7DD202B28610090D585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,20 +103,12 @@
 			path = Presentador;
 			sourceTree = "<group>";
 		};
-		9ABAE1582045754C00A5F56E /* Modelo */ = {
+		9ABAE15B204576E100A5F56E /* Modelo */ = {
 			isa = PBXGroup;
 			children = (
-				9ABAE15A2045756F00A5F56E /* Cell.swift */,
-				9ABAE1592045755300A5F56E /* Poso */,
+				9ABAE15E2045774200A5F56E /* Cell.swift */,
 			);
 			path = Modelo;
-			sourceTree = "<group>";
-		};
-		9ABAE1592045755300A5F56E /* Poso */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Poso;
 			sourceTree = "<group>";
 		};
 		9AE0F7CF202B28600090D585 = {
@@ -142,7 +134,7 @@
 		9AE0F7DA202B28610090D585 /* ProyectoSwift */ = {
 			isa = PBXGroup;
 			children = (
-				9ABAE1582045754C00A5F56E /* Modelo */,
+				9ABAE15B204576E100A5F56E /* Modelo */,
 				9ABAE1562045746400A5F56E /* ClienteHttp.swift */,
 				9ABAE1542045745900A5F56E /* OnHttpResponse.swift */,
 				9ABAE1522045740200A5F56E /* RestJsonUtil.swift */,

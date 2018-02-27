@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate {
-    
+    // HOLA
     let categories = ["Pan", "Bollería", "Croasant", "Navidad", "Otros"]
 
     override func viewDidLoad() {
