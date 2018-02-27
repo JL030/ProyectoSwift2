@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
+		0B288DCE20457DA500B9BE36 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B288DCD20457DA500B9BE36 /* CellTableViewCell.swift */; };
 		9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */; };
 		9ABAE1532045740200A5F56E /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1522045740200A5F56E /* RestJsonUtil.swift */; };
 		9ABAE1552045745900A5F56E /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1542045745900A5F56E /* OnHttpResponse.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		0B288DCD20457DA500B9BE36 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 		9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPrincipal.swift; sourceTree = "<group>"; };
 		9ABAE1522045740200A5F56E /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestJsonUtil.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/RestJsonUtil.swift"; sourceTree = "<group>"; };
 		9ABAE1542045745900A5F56E /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnHttpResponse.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/OnHttpResponse.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				9ABAE1652045790A00A5F56E /* YeehCell.swift */,
 				9ABAE1632045784700A5F56E /* Ejemplo.swift */,
+				0B288DCD20457DA500B9BE36 /* CellTableViewCell.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				9ABAE1662045790A00A5F56E /* YeehCell.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
 				9ABAE1572045746400A5F56E /* ClienteHttp.swift in Sources */,
+				0B288DCE20457DA500B9BE36 /* CellTableViewCell.swift in Sources */,
 				9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */,
 				9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */,
 				9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */,
