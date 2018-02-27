@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
+		0B1AF9F62045CC82001D6235 /* ClienteHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AF9F32045CC81001D6235 /* ClienteHttp.swift */; };
+		0B1AF9F72045CC82001D6235 /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AF9F42045CC82001D6235 /* RestJsonUtil.swift */; };
+		0B1AF9F82045CC82001D6235 /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AF9F52045CC82001D6235 /* OnHttpResponse.swift */; };
 		9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */; };
-		9ABAE1532045740200A5F56E /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1522045740200A5F56E /* RestJsonUtil.swift */; };
-		9ABAE1552045745900A5F56E /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1542045745900A5F56E /* OnHttpResponse.swift */; };
-		9ABAE1572045746400A5F56E /* ClienteHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1562045746400A5F56E /* ClienteHttp.swift */; };
 		9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1632045784700A5F56E /* Ejemplo.swift */; };
-		9ABAE1662045790A00A5F56E /* YeehCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1652045790A00A5F56E /* YeehCell.swift */; };
 		9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DB202B28610090D585 /* AppDelegate.swift */; };
 		9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DD202B28610090D585 /* ViewController.swift */; };
 		9AE0F7E1202B28610090D585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DF202B28610090D585 /* Main.storyboard */; };
@@ -42,12 +41,11 @@
 
 /* Begin PBXFileReference section */
 		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		0B1AF9F32045CC81001D6235 /* ClienteHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClienteHttp.swift; path = ../../gema/ClienteRest/ClienteRest/rest/ClienteHttp.swift; sourceTree = "<group>"; };
+		0B1AF9F42045CC82001D6235 /* RestJsonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestJsonUtil.swift; path = ../../gema/ClienteRest/ClienteRest/rest/RestJsonUtil.swift; sourceTree = "<group>"; };
+		0B1AF9F52045CC82001D6235 /* OnHttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnHttpResponse.swift; path = ../../gema/ClienteRest/ClienteRest/rest/OnHttpResponse.swift; sourceTree = "<group>"; };
 		9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPrincipal.swift; sourceTree = "<group>"; };
-		9ABAE1522045740200A5F56E /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestJsonUtil.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/RestJsonUtil.swift"; sourceTree = "<group>"; };
-		9ABAE1542045745900A5F56E /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnHttpResponse.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/OnHttpResponse.swift"; sourceTree = "<group>"; };
-		9ABAE1562045746400A5F56E /* ClienteHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClienteHttp.swift; path = "../../Mis Documentos/Modulo/2º DAM/2º Trimestre/Programación de Aplicaciones móviles - Carmelo/Swift/ClienteRest/ClienteRest/rest/ClienteHttp.swift"; sourceTree = "<group>"; };
 		9ABAE1632045784700A5F56E /* Ejemplo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejemplo.swift; sourceTree = "<group>"; };
-		9ABAE1652045790A00A5F56E /* YeehCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YeehCell.swift; path = "../../../Mis Documentos/Proyecto/ProyectoSwift2/ProyectoSwift/YeehCell.swift"; sourceTree = "<group>"; };
 		9AE0F7D8202B28610090D585 /* ProyectoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0F7DB202B28610090D585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE0F7DD202B28610090D585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		9ABAE1622045783700A5F56E /* Modelo */ = {
 			isa = PBXGroup;
 			children = (
-				9ABAE1652045790A00A5F56E /* YeehCell.swift */,
 				9ABAE1632045784700A5F56E /* Ejemplo.swift */,
 			);
 			path = Modelo;
@@ -138,10 +135,10 @@
 		9AE0F7DA202B28610090D585 /* ProyectoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				0B1AF9F32045CC81001D6235 /* ClienteHttp.swift */,
+				0B1AF9F52045CC82001D6235 /* OnHttpResponse.swift */,
+				0B1AF9F42045CC82001D6235 /* RestJsonUtil.swift */,
 				9ABAE1622045783700A5F56E /* Modelo */,
-				9ABAE1562045746400A5F56E /* ClienteHttp.swift */,
-				9ABAE1542045745900A5F56E /* OnHttpResponse.swift */,
-				9ABAE1522045740200A5F56E /* RestJsonUtil.swift */,
 				9A7185EF2044962D003F697E /* Presentador */,
 				9A7185E92044955D003F697E /* Vista */,
 				9AE0F7DB202B28610090D585 /* AppDelegate.swift */,
@@ -304,15 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ABAE1532045740200A5F56E /* RestJsonUtil.swift in Sources */,
+				0B1AF9F62045CC82001D6235 /* ClienteHttp.swift in Sources */,
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
-				9ABAE1662045790A00A5F56E /* YeehCell.swift in Sources */,
+				0B1AF9F72045CC82001D6235 /* RestJsonUtil.swift in Sources */,
+				0B1AF9F82045CC82001D6235 /* OnHttpResponse.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
-				9ABAE1572045746400A5F56E /* ClienteHttp.swift in Sources */,
 				9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */,
 				9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */,
 				9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */,
-				9ABAE1552045745900A5F56E /* OnHttpResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

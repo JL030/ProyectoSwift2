@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="BXp-2b-HXH">
             <objects>
-                <viewController storyboardIdentifier="inicio" id="JgB-Zm-evm" customClass="ViewController" customModule="ProyectoSwift" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inicio" id="JgB-Zm-evm" customClass="ViewController" customModule="ProyectoSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YdP-n0-5A6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="doRequest:" destination="JgB-Zm-evm" eventType="touchUpInside" id="169-8g-jLb"/>
+                                    <action selector="doRequest:" destination="JgB-Zm-evm" eventType="touchUpInside" id="ANp-7w-b3y"/>
                                     <segue destination="aAO-rw-bna" kind="show" id="pEL-fL-VjG"/>
                                 </connections>
                             </button>
@@ -79,6 +79,10 @@
                         <viewLayoutGuide key="safeArea" id="7Ny-JP-ChC"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="Vhi-66-gp4"/>
+                    <connections>
+                        <outlet property="passText" destination="La7-T5-fij" id="eIY-TT-s6O"/>
+                        <outlet property="userText" destination="u5d-kL-cyQ" id="94W-JE-UMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJs-ZK-cC2" sceneMemberID="firstResponder"/>
             </objects>

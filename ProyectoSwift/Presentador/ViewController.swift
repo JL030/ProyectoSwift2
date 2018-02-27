@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
