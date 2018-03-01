@@ -1,4 +1,3 @@
-, UICollectionViewDelegate//
 //  ViewControllerPrincipal.swift
 //  ProyectoSwift
 //
@@ -17,13 +16,13 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        var imagen : UIImageView
+        /*var imagen : UIImageView
         imagen = ClienteHttp.downloadImage("https://bbdd-javi030.c9users.io/IosPanaderia/images/11.png&text=Loaded+Image!")
         if imagen == nil{
             print("No hay imagen")
         }else{
             print("imagen ",imagen)
-        }
+        }*/
 
         // Do any additional setup after loading the view.
     }

@@ -43,10 +43,16 @@ class ViewController: UIViewController, OnHttpResponse {
         
         let resultado = RestJsonUtil.jsonToDict(data: data)
         
+        for values in (resultado?.keys)! {
+            print("LOS VALORES SON \(values)")
+        }
+        
+        
+        
         //print(resultado!["token" ?? "error"])
         //print(resultado!["ok" ?? "error"])
         
-        if let respuesta = String(data: data, encoding: .utf8) {
+        /*if let respuesta = String(data: data, encoding: .utf8) {
             //print("respuesta hecha por el servido")
             print(respuesta)
             //print("Final de la respiesta")
@@ -72,7 +78,7 @@ class ViewController: UIViewController, OnHttpResponse {
                 
                 self.present(alerta, animated: true)
             }
-        }
+        }*/
     }
     
     func onErrorReceivingData(message: String) {
