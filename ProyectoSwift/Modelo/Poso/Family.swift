@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct family{
+    var id : Int
+    var family : String
+    var imagen : String
+}
