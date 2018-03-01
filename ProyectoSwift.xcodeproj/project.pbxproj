@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
 		9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B112047E40300BED5DD /* ClienteHttp.swift */; };
+		9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B132047E4C000BED5DD /* OnHttpResponse.swift */; };
+		9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B152047E4F800BED5DD /* RestJsonUtil.swift */; };
 		9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */; };
-		9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABAE1632045784700A5F56E /* Ejemplo.swift */; };
 		9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DB202B28610090D585 /* AppDelegate.swift */; };
 		9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DD202B28610090D585 /* ViewController.swift */; };
 		9AE0F7E1202B28610090D585 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DF202B28610090D585 /* Main.storyboard */; };
@@ -40,8 +41,9 @@
 /* Begin PBXFileReference section */
 		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		9A685B112047E40300BED5DD /* ClienteHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteHttp.swift; sourceTree = "<group>"; };
+		9A685B132047E4C000BED5DD /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnHttpResponse.swift; sourceTree = "<group>"; };
+		9A685B152047E4F800BED5DD /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestJsonUtil.swift; sourceTree = "<group>"; };
 		9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPrincipal.swift; sourceTree = "<group>"; };
-		9ABAE1632045784700A5F56E /* Ejemplo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ejemplo.swift; sourceTree = "<group>"; };
 		9AE0F7D8202B28610090D585 /* ProyectoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0F7DB202B28610090D585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE0F7DD202B28610090D585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				9AE0F7DD202B28610090D585 /* ViewController.swift */,
 				9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */,
+				0B02CA6520325D53006D02FF /* RegistroViewController.swift */,
 			);
 			path = Presentador;
 			sourceTree = "<group>";
@@ -103,7 +106,9 @@
 		9ABAE1622045783700A5F56E /* Modelo */ = {
 			isa = PBXGroup;
 			children = (
-				9ABAE1632045784700A5F56E /* Ejemplo.swift */,
+				9A685B112047E40300BED5DD /* ClienteHttp.swift */,
+				9A685B132047E4C000BED5DD /* OnHttpResponse.swift */,
+				9A685B152047E4F800BED5DD /* RestJsonUtil.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -137,8 +142,6 @@
 				9AE0F7DB202B28610090D585 /* AppDelegate.swift */,
 				9AE0F7E2202B28610090D585 /* Assets.xcassets */,
 				9AE0F7E7202B28610090D585 /* Info.plist */,
-				0B02CA6520325D53006D02FF /* RegistroViewController.swift */,
-				9A685B112047E40300BED5DD /* ClienteHttp.swift */,
 			);
 			path = ProyectoSwift;
 			sourceTree = "<group>";
@@ -295,10 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */,
 				9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */,
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
+				9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
-				9ABAE1642045784700A5F56E /* Ejemplo.swift in Sources */,
 				9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */,
 				9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */,
 			);
