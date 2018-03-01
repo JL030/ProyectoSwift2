@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
+		0B8BC8A7204823CE00B168BF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A6204823CE00B168BF /* Login.swift */; };
+		0B8BC8AA2048254400B168BF /* Familia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A92048254400B168BF /* Familia.swift */; };
+		0B8BC8AC2048255700B168BF /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8AB2048255700B168BF /* Categoria.swift */; };
 		9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B112047E40300BED5DD /* ClienteHttp.swift */; };
 		9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B132047E4C000BED5DD /* OnHttpResponse.swift */; };
 		9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B152047E4F800BED5DD /* RestJsonUtil.swift */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		0B8BC8A6204823CE00B168BF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		0B8BC8A92048254400B168BF /* Familia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Familia.swift; sourceTree = "<group>"; };
+		0B8BC8AB2048255700B168BF /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 		9A685B112047E40300BED5DD /* ClienteHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteHttp.swift; sourceTree = "<group>"; };
 		9A685B132047E4C000BED5DD /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnHttpResponse.swift; sourceTree = "<group>"; };
 		9A685B152047E4F800BED5DD /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestJsonUtil.swift; sourceTree = "<group>"; };
@@ -88,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B8BC8A82048252000B168BF /* Poso */ = {
+			isa = PBXGroup;
+			children = (
+				0B8BC8A6204823CE00B168BF /* Login.swift */,
+				0B8BC8A92048254400B168BF /* Familia.swift */,
+				0B8BC8AB2048255700B168BF /* Categoria.swift */,
+			);
+			path = Poso;
+			sourceTree = "<group>";
+		};
 		9A7185E92044955D003F697E /* Vista */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +126,7 @@
 		9ABAE1622045783700A5F56E /* Modelo */ = {
 			isa = PBXGroup;
 			children = (
+				0B8BC8A82048252000B168BF /* Poso */,
 				9A685B112047E40300BED5DD /* ClienteHttp.swift */,
 				9A685B132047E4C000BED5DD /* OnHttpResponse.swift */,
 				9A685B152047E4F800BED5DD /* RestJsonUtil.swift */,
@@ -305,11 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */,
+				0B8BC8AC2048255700B168BF /* Categoria.swift in Sources */,
 				9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */,
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
+				0B8BC8AA2048254400B168BF /* Familia.swift in Sources */,
 				9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
 				9A685B1A2047F5DC00BED5DD /* Cell.swift in Sources */,
+				0B8BC8A7204823CE00B168BF /* Login.swift in Sources */,
 				9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */,
 				9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */,
 			);
@@ -479,7 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YFSUJ65G2Z;
 				INFOPLIST_FILE = ProyectoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,7 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YFSUJ65G2Z;
 				INFOPLIST_FILE = ProyectoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

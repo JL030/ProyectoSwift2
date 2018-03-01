@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, OnHttpResponse {
     
     @IBOutlet weak var userText: UITextField!
@@ -43,7 +44,11 @@ class ViewController: UIViewController, OnHttpResponse {
         
         let resultado = RestJsonUtil.jsonToDict(data: data)
         
-        for values in (resultado?.keys)! {
+        for valueskey in (resultado?.keys)! {
+            print("LAS CLAVES SON \(valueskey)")
+        }
+        
+        for values in (resultado?.values)! {
             print("LOS VALORES SON \(values)")
         }
         
