@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, OnHttpResponse {
     
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
