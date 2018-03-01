@@ -1,24 +1,18 @@
 //
-//  ProyectoSwiftTests.swift
+//  TestApp.swift
 //  ProyectoSwiftTests
 //
-//  Created by Javier Lopez Girela on 7/2/18.
+//  Created by Javier Lopez Girela on 1/3/18.
 //  Copyright © 2018 Javier Lopez Girela. All rights reserved.
 //
 
 import XCTest
-@testable import 
-
-class ProyectoSwiftTests: XCTestCase {
+@testable import ProyectoSwift2
+class TestApp: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        //var cliente : ClienteHttp = ClienteHttp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    func tryDownloadingImage(){
-        let imagen : UIImageView
     }
     
     override func tearDown() {

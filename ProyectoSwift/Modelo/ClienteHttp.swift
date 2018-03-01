@@ -69,4 +69,23 @@ class ClienteHttp{
             self.respuesta.onDataReceived(data: datos)
         }
     }
+    static func downloadImage(_ uri : String)->UIImageView{
+        let url = URL(String:uri)
+        let task = URLSession.shared.dataTask(with: url!){
+            responseData, response, error in
+            if error == nil{
+                if let data = responseData {
+                    DispatchQueue.main.async {
+                        return inView.image = UIImage(data: data)
+                    }
+                }else{
+                    print("no data")
+                }
+            }else{
+                print(error)
+            }
+            }
+        task.resume()
+        }
+    }
 }
