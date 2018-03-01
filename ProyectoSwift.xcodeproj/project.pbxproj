@@ -12,6 +12,7 @@
 		9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B132047E4C000BED5DD /* OnHttpResponse.swift */; };
 		9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B152047E4F800BED5DD /* RestJsonUtil.swift */; };
 		9A685B182047F41500BED5DD /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B172047F41500BED5DD /* TestApp.swift */; };
+		9A685B1A2047F5DC00BED5DD /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B192047F5DC00BED5DD /* Cell.swift */; };
 		9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */; };
 		9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DB202B28610090D585 /* AppDelegate.swift */; };
 		9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0F7DD202B28610090D585 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		9A685B132047E4C000BED5DD /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnHttpResponse.swift; sourceTree = "<group>"; };
 		9A685B152047E4F800BED5DD /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestJsonUtil.swift; sourceTree = "<group>"; };
 		9A685B172047F41500BED5DD /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
+		9A685B192047F5DC00BED5DD /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPrincipal.swift; sourceTree = "<group>"; };
 		9AE0F7D8202B28610090D585 /* ProyectoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE0F7DB202B28610090D585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9A685B112047E40300BED5DD /* ClienteHttp.swift */,
 				9A685B132047E4C000BED5DD /* OnHttpResponse.swift */,
 				9A685B152047E4F800BED5DD /* RestJsonUtil.swift */,
+				9A685B192047F5DC00BED5DD /* Cell.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
 				9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
+				9A685B1A2047F5DC00BED5DD /* Cell.swift in Sources */,
 				9A7185EB20449592003F697E /* ViewControllerPrincipal.swift in Sources */,
 				9AE0F7DC202B28610090D585 /* AppDelegate.swift in Sources */,
 			);
