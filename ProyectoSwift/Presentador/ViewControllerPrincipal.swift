@@ -7,40 +7,47 @@
 
 import UIKit
 
-class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate {
-    // HOLA
-    let categories = ["Pan", "Bollería", "Croasant", "Navidad", "Otros"]
-    
-    
+struct family : Codable{
+    var id : Int
+    var family : String
+    var imagen : String
+}
 
+class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
+    // HOLA
+    var categorias = [family]()
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        /*var imagen : UIImageView
-        imagen = ClienteHttp.downloadImage("https://bbdd-javi030.c9users.io/IosPanaderia/images/11.png&text=Loaded+Image!")
-        if imagen == nil{
-            print("No hay imagen")
-        }else{
-            print("imagen ",imagen)
-        }*/
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        collectionView.dataSource = self
+        
+        let url = URL(string : "https://bbdd-javi030.c9users.io/IosPanaderia/")
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            do{
+                self.categorias = try JSONDecoder().decode([family].self, from: data!)
+            }catch {
+                print("error")
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }.resume()
+     
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categorias.count
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
+        
+        cell.nameLabel.text = categorias[indexPath.row].family.capitalized
+        return cell
+    }
+
 
 }

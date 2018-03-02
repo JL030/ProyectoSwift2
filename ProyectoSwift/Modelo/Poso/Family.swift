@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct family : Codable{
+/*struct family : Codable{
     var id : Int
     var family : String
     var imagen : String
-}
+}*/
