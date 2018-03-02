@@ -9,5 +9,8 @@
 import Foundation
 
 struct Login {
+    var id : Int
     var token: String
+    var login : String
+    var password : String
 }

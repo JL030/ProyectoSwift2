@@ -91,4 +91,20 @@ class ClienteHttp{
         task.resume()
         }
     }*/
+    
+    func getCategories(){
+        guard let cliente = ClienteHttp(target: "family", authorization: "Bearer", responseObject : self as! OnHttpResponse) else {
+            return
+        }
+        cliente.request()
+    }
+    
+    func saveCategories(_ data : Data){
+        do{
+            let categories = try JSONDecoder().decode(family.self, from: data)
+            print(categories)
+        }catch{
+            print("Error")
+        }
+    }
 }

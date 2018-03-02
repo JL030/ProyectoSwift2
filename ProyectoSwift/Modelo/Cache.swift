@@ -9,9 +9,8 @@
 import Foundation
 
 class Cache{
-    private let url : String = "https://bbdd-javi030.c9users.io/IosPanaderia/"
+    var categories = [family]()
+    var productos = [Product]()
     
-    func getCategories(){
-        
-    }
+
 }

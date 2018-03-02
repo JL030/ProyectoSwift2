@@ -6,9 +6,9 @@
 //  Copyright © 2018 Javier Lopez Girela. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct family{
+struct family : Codable{
     var id : Int
     var family : String
     var imagen : String
