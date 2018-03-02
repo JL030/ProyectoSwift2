@@ -13,6 +13,7 @@
 		9A1AFC37204827D900F911F6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC36204827D900F911F6 /* Product.swift */; };
 		9A1AFC392048285600F911F6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC382048285600F911F6 /* Ticket.swift */; };
 		9A1AFC3B204828CA00F911F6 /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC3A204828CA00F911F6 /* TicketDetail.swift */; };
+		9A2B50662049BA7F0078481E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B50652049BA7F0078481E /* Cache.swift */; };
 		9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B112047E40300BED5DD /* ClienteHttp.swift */; };
 		9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B132047E4C000BED5DD /* OnHttpResponse.swift */; };
 		9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A685B152047E4F800BED5DD /* RestJsonUtil.swift */; };
@@ -52,6 +53,7 @@
 		9A1AFC36204827D900F911F6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9A1AFC382048285600F911F6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		9A1AFC3A204828CA00F911F6 /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
+		9A2B50652049BA7F0078481E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9A685B112047E40300BED5DD /* ClienteHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteHttp.swift; sourceTree = "<group>"; };
 		9A685B132047E4C000BED5DD /* OnHttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnHttpResponse.swift; sourceTree = "<group>"; };
 		9A685B152047E4F800BED5DD /* RestJsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestJsonUtil.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				9A685B132047E4C000BED5DD /* OnHttpResponse.swift */,
 				9A685B152047E4F800BED5DD /* RestJsonUtil.swift */,
 				9A685B192047F5DC00BED5DD /* Cell.swift */,
+				9A2B50652049BA7F0078481E /* Cache.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2B50662049BA7F0078481E /* Cache.swift in Sources */,
 				9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */,
 				9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */,
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
