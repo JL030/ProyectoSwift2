@@ -16,7 +16,7 @@ struct family : Codable{
 class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     // HOLA
     var categorias = [family]()
-    var token : String!
+    var token = ""
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
