@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
+		0B6B7C8E204AE012006CF2A1 /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */; };
 		0B8BC8A7204823CE00B168BF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A6204823CE00B168BF /* Login.swift */; };
 		0B8BC8AA2048254400B168BF /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A92048254400B168BF /* Family.swift */; };
 		9A1AFC37204827D900F911F6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC36204827D900F911F6 /* Product.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMain.swift; sourceTree = "<group>"; };
 		0B8BC8A6204823CE00B168BF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0B8BC8A92048254400B168BF /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		9A1AFC36204827D900F911F6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				9AE0F7DD202B28610090D585 /* ViewController.swift */,
 				9A7185EA20449592003F697E /* ViewControllerPrincipal.swift */,
 				0B02CA6520325D53006D02FF /* RegistroViewController.swift */,
+				0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */,
 			);
 			path = Presentador;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				9A2B50662049BA7F0078481E /* Cache.swift in Sources */,
 				9A34F9C9204A072900513D00 /* CustomCollectionViewCell.swift in Sources */,
 				9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */,
+				0B6B7C8E204AE012006CF2A1 /* ViewControllerMain.swift in Sources */,
 				9A685B122047E40300BED5DD /* ClienteHttp.swift in Sources */,
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
 				0B8BC8AA2048254400B168BF /* Family.swift in Sources */,

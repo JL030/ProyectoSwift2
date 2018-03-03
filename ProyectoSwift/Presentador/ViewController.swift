@@ -13,7 +13,7 @@ class ViewController: UIViewController, OnHttpResponse {
     
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
-    
+    var tokenReal = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class ViewController: UIViewController, OnHttpResponse {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func doRequest(_ sender: Any) {
         
@@ -48,6 +49,15 @@ class ViewController: UIViewController, OnHttpResponse {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ViewControllerMain
+        {
+            let vc = segue.destination as? ViewControllerMain
+            vc?.texto = tokenReal
+        }
+    }
+    
     
     func onDataReceived(data: Data) {
         
@@ -57,12 +67,18 @@ class ViewController: UIViewController, OnHttpResponse {
         //let login = Login.init(token: (resultado?.values as? String)!)
         
         do{
-            let categories = try JSONDecoder().decode(Login.self, from: data)
-            print(categories)
+            let prueba = try JSONDecoder().decode(Login.self, from: data)
+            print(prueba)
             
-            if !(categories.token).isEmpty {
+            if !(prueba.token).isEmpty {
                 print("entro")
+                
+                tokenReal = prueba.token
+                
                 performSegue(withIdentifier: "loginCorrecto", sender: self)
+                
+                //let p = prueba.token
+                
             }
             
         }catch{
@@ -112,6 +128,8 @@ class ViewController: UIViewController, OnHttpResponse {
          self.present(alerta, animated: true)
          }
          }*/
+        
+        
     }
     
     func onErrorReceivingData(message: String) {

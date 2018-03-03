@@ -92,25 +92,33 @@
             </objects>
             <point key="canvasLocation" x="447.19999999999999" y="-349.47526236881561"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Main-->
         <scene sceneID="EvJ-Sk-5Rs">
             <objects>
-                <viewController id="aAO-rw-bna" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aAO-rw-bna" customClass="ViewControllerMain" customModule="ProyectoSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrh-bd-aPb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1a-3d-AQ7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1a-3d-AQ7">
                                 <rect key="frame" x="166" y="80" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N1a-3d-AQ7" firstAttribute="leading" secondItem="FyC-Ii-Kns" secondAttribute="leading" constant="166" id="TXW-rR-5Zt"/>
+                            <constraint firstItem="FyC-Ii-Kns" firstAttribute="bottom" secondItem="N1a-3d-AQ7" secondAttribute="bottom" constant="566" id="VHi-mS-WWj"/>
+                            <constraint firstItem="FyC-Ii-Kns" firstAttribute="trailing" secondItem="N1a-3d-AQ7" secondAttribute="trailing" constant="167" id="gq3-xo-5fx"/>
+                            <constraint firstItem="N1a-3d-AQ7" firstAttribute="top" secondItem="FyC-Ii-Kns" secondAttribute="top" constant="60" id="o01-pm-zyM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FyC-Ii-Kns"/>
                     </view>
+                    <connections>
+                        <outlet property="labelprueba" destination="N1a-3d-AQ7" id="AmF-ny-fa7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYx-aS-UIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
