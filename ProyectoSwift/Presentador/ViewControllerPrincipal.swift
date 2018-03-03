@@ -16,11 +16,13 @@ struct family : Codable{
 class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     // HOLA
     var categorias = [family]()
-    
+    var token : String!
+
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("token")
+        print(token)
         collectionView.dataSource = self
         
         let url = URL(string : "https://bbdd-javi030.c9users.io/IosPanaderia/")
@@ -45,7 +47,7 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
         
-        cell.nameLabel.text = categorias[indexPath.row].family.capitalized
+        cell.nameLabel.text = token//categorias[indexPath.row].family.capitalized
         return cell
     }
 

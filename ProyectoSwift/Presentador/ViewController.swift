@@ -56,6 +56,11 @@ class ViewController: UIViewController, OnHttpResponse {
             let vc = segue.destination as? ViewControllerMain
             vc?.texto = tokenReal
         }
+        // Segue al principal
+        if segue.destination is ViewControllerPrincipal{
+            let token = segue.destination as? ViewControllerPrincipal
+            token?.token = tokenReal
+        }
     }
     
     
@@ -75,7 +80,8 @@ class ViewController: UIViewController, OnHttpResponse {
                 
                 tokenReal = prueba.token
                 
-                performSegue(withIdentifier: "loginCorrecto", sender: self)
+                //performSegue(withIdentifier: "loginCorrecto", sender: self)
+                performSegue(withIdentifier: "segueTokenAPrincipal", sender: self)
                 
                 //let p = prueba.token
                 
