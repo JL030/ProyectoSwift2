@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Login {
-    var id : Int
+struct Login: Decodable {
+    //var id : Int
     var token: String
-    var login : String
-    var password : String
+    //var login : String
+    //var password : String
 }
