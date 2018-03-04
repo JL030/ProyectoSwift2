@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02CA6520325D53006D02FF /* RegistroViewController.swift */; };
+		0B1E750C204C6EA000D9391B /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E750B204C6EA000D9391B /* Registro.swift */; };
 		0B6B7C8E204AE012006CF2A1 /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */; };
 		0B8BC8A7204823CE00B168BF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A6204823CE00B168BF /* Login.swift */; };
 		0B8BC8AA2048254400B168BF /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A92048254400B168BF /* Family.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		0B02CA6520325D53006D02FF /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		0B1E750B204C6EA000D9391B /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMain.swift; sourceTree = "<group>"; };
 		0B8BC8A6204823CE00B168BF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0B8BC8A92048254400B168BF /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				9A1AFC36204827D900F911F6 /* Product.swift */,
 				9A1AFC382048285600F911F6 /* Ticket.swift */,
 				9A1AFC3A204828CA00F911F6 /* TicketDetail.swift */,
+				0B1E750B204C6EA000D9391B /* Registro.swift */,
 			);
 			path = Poso;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				9AE0F7DE202B28610090D585 /* ViewController.swift in Sources */,
 				0B8BC8AA2048254400B168BF /* Family.swift in Sources */,
 				9A685B162047E4F800BED5DD /* RestJsonUtil.swift in Sources */,
+				0B1E750C204C6EA000D9391B /* Registro.swift in Sources */,
 				9A1AFC37204827D900F911F6 /* Product.swift in Sources */,
 				0B02CA6620325D53006D02FF /* RegistroViewController.swift in Sources */,
 				9A1AFC392048285600F911F6 /* Ticket.swift in Sources */,

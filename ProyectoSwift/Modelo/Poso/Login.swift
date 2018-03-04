@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Login: Decodable {
+struct Login: Codable {
     
     //var id : Int
     var token: String

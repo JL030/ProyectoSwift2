@@ -21,9 +21,8 @@ class RegistroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-         Funcionamiento de las imagenes para que aparezcan y demas...
-         */
+        check1.isHidden = true
+        check2.isHidden = true
 
     }
 
@@ -38,11 +37,39 @@ class RegistroViewController: UIViewController {
         let pass = regPass.text
         let confirmdPass = regPassConfirmed.text
         
-        var parameters = Dictionary<String, Any>()
+        if (user?.isEmpty)! && (pass?.isEmpty)! && (confirmdPass?.isEmpty)! {
+            //Campos completos...
+            print("entra")
+            if pass == confirmdPass {
+                print("Password iguales 1\(pass) 2\(confirmdPass)")
+                /*guard let cliente = ClienteHttp(target: "setmember", authorization: "Basic \(base64LoginString)", responseObject: self) else {
+                    return
+                }
+                cliente.request()*/
+                check1.isHidden = false
+                check2.isHidden = false
+                
+            } else {
+                
+                
+                
+                
+            }
+        } else {
+            
+            let alert = UIAlertController(title: "Campos Vacios", message: "¡Los campos deben de estar completos!", preferredStyle: .alert)
+            
+            let volver = UIAlertAction(title: "Volver", style: .default, handler: nil)
+            
+            alert.addAction(volver)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
-        parameters = [
-        "user" : "\(user)",
-            "pass" : "\(pass)"]
+        //var parameters = ["user": user, "pass":pass]
+        
+        
         
     }
     
