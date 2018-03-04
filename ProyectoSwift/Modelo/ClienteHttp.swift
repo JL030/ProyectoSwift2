@@ -27,6 +27,7 @@ class ClienteHttp{
     init?(target: String, authorization : String, responseObject: OnHttpResponse,
           _ method: String = "GET", _ data : [String:Any] = [:]) {
         guard let url = URL(string: self.urlApi + target) else {
+        
             return nil
         }
         self.respuesta = responseObject

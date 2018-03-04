@@ -9,16 +9,41 @@
 import UIKit
 
 class RegistroViewController: UIViewController {
-
+    
+    @IBOutlet weak var regUser: UITextField!
+    @IBOutlet weak var regPass: UITextField!
+    @IBOutlet weak var regPassConfirmed: UITextField!
+    
+    @IBOutlet weak var check1: UIImageView!
+    @IBOutlet weak var check2: UIImageView!
+    
+    @IBOutlet weak var btnregister: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+         Funcionamiento de las imagenes para que aparezcan y demas...
+         */
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func sendRegister(_ sender: UIButton) {
+        
+        let user = regUser.text
+        let pass = regPass.text
+        let confirmdPass = regPassConfirmed.text
+        
+        var parameters = Dictionary<String, Any>()
+        
+        parameters = [
+        "user" : "\(user)",
+            "pass" : "\(pass)"]
+        
     }
     
     

@@ -49,13 +49,15 @@ class ViewController: UIViewController, OnHttpResponse {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is ViewControllerMain
-        {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //Segue al menu inicial
+        if segue.destination is ViewControllerMain {
+            
             let vc = segue.destination as? ViewControllerMain
             vc?.texto = tokenReal
         }
+        
         // Segue al principal
         if segue.destination is ViewControllerPrincipal{
             let token = segue.destination as? ViewControllerPrincipal
