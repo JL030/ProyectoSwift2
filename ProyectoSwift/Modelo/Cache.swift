@@ -9,8 +9,6 @@
 import Foundation
 
 class Cache{
-    var categories = [family]()
-    var productos = [Product]()
-    
-
+    /*var categories = [family]()
+    var productos = [Product]()*/
 }

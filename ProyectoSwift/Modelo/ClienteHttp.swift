@@ -11,8 +11,8 @@ import UIKit
 class ClienteHttp{
     // URL de nuestra
     //"https://ide.c9.io/izvdamdaw/curso1718"
-    //let urlApi: String = "https://bbdd-javi030.c9users.io/IosPanaderia/api.php"
-    let urlApi: String = "https://rest-angelo8.c9users.io/proyecto/api.php"
+    let urlApi: String = "https://bbdd-javi030.c9users.io/IosPanaderia/api.php"
+    //let urlApi: String = "https://rest-angelo8.c9users.io/proyecto/api.php"
     let respuesta: OnHttpResponse
     var urlPeticion: URLRequest
     
@@ -83,7 +83,7 @@ class ClienteHttp{
     func saveCategories(_ data : Data){
         
         do{
-            let categories = try JSONDecoder().decode(family.self, from: data)
+            let categories = try JSONDecoder().decode(Family.self, from: data)
             print(categories)
         }catch{
             print("Error")

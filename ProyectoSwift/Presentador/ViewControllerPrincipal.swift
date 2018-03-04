@@ -7,15 +7,8 @@
 
 import UIKit
 
-struct family : Codable{
-    var id : Int
-    var family : String
-    var imagen : String
-}
-
-class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
-    // HOLA
-    var categorias = [family]()
+class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionViewDataSource {
+    
     var token = ""
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,23 +18,39 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
         print(token)
         collectionView.dataSource = self
         
-        let url = URL(string : "https://bbdd-javi030.c9users.io/IosPanaderia/")
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            do{
-                self.categorias = try JSONDecoder().decode([family].self, from: data!)
-            }catch {
-                print("error")
-            }
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }.resume()
+        guard let cliente = ClienteHttp(target: "family", authorization: "Basic amF2aTpqYXZp", responseObject: self) else {
+            return
+        }
+        cliente.request()
+        //let url = URL(string : "https://bbdd-javi030.c9users.io/IosPanaderia/")
+        
      
     }
     
+    func onDataReceived(data: Data) {
+        
+        do{
+            // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo convertimos
+            // en un objeto de la clase family.swift |data es los datos devueltos de la petición|
+            let categorias = try JSONDecoder().decode(Family.self, from: data)
+            print(categorias)
+            if(categorias.family.isEmpty){
+                print("******NO HAY DATOS DE CATEGORIAS******")
+            }else{
+                print("******CATEGORIAS*****")
+                print(categorias.id, categorias.family)
+            }
+        }catch {
+            print("Error al recibir los datos")
+        }
+    }
+    
+    func onErrorReceivingData(message: String) {
+        print("Error al recibir los datos 1")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categorias.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,6 +59,4 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
         cell.nameLabel.text = token//categorias[indexPath.row].family.capitalized
         return cell
     }
-
-
 }
