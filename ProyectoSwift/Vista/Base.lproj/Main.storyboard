@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,7 +86,6 @@
                         <outlet property="passText" destination="La7-T5-fij" id="eIY-TT-s6O"/>
                         <outlet property="userText" destination="u5d-kL-cyQ" id="94W-JE-UMs"/>
                         <segue destination="aAO-rw-bna" kind="show" identifier="loginCorrecto" id="RK8-af-GcA"/>
-                        <segue destination="8OF-hp-kZQ" kind="show" identifier="seguePrincipal" id="dzM-Ps-dIt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJs-ZK-cC2" sceneMemberID="firstResponder"/>
@@ -111,6 +110,9 @@
                                 <state key="normal" title="Nuevo Pedido">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="8OF-hp-kZQ" kind="show" identifier="seguePrincipal" id="5oP-qW-t7h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaC-Cr-a2l">
                                 <rect key="frame" x="84" y="524" width="207" height="41"/>

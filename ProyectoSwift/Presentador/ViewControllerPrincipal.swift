@@ -14,11 +14,11 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("token")
+        print("ESTE ES EL token")
         print(token)
         collectionView.dataSource = self
         
-        guard let cliente = ClienteHttp(target: "family", authorization: "Basic amF2aTpqYXZp", responseObject: self) else {
+        guard let cliente = ClienteHttp(target: "family", authorization: "Bearer " + token, responseObject: self) else {
             return
         }
         cliente.request()
@@ -29,6 +29,8 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
     
     func onDataReceived(data: Data) {
         
+        let respuesta = RestJsonUtil.jsonToDict(data: data)
+        print(respuesta)
         do{
             // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo convertimos
             // en un objeto de la clase family.swift |data es los datos devueltos de la petición|

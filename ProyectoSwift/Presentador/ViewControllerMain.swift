@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewControllerMain: UIViewController {
-    
+    var token = ""
     @IBOutlet weak var labelprueba: UILabel!
     var usuario = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("TOKEN 1")
+        print(token)
         //labelprueba.text = usuario
         
         
@@ -27,7 +29,14 @@ class ViewControllerMain: UIViewController {
     }
     
 
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Segue al principal
+        if segue.destination is ViewControllerPrincipal{
+            let token = segue.destination as? ViewControllerPrincipal
+            token?.token = self.token
+        }
+    }
     
     /*
      // MARK: - Navigation

@@ -57,12 +57,8 @@ class ViewController: UIViewController, OnHttpResponse {
             
             let vc = segue.destination as? ViewControllerMain
             vc?.usuario = "current"
-        }
-        
-        // Segue al principal
-        if segue.destination is ViewControllerPrincipal{
-            let token = segue.destination as? ViewControllerPrincipal
-            token?.token = tokenReal
+            vc?.token = tokenReal
+            
         }
     }
     
