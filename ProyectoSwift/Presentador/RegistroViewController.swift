@@ -18,13 +18,48 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var check2: UIImageView!
     
     @IBOutlet weak var btnregister: UIButton!
+    
+    var confir1 = ""
+    var confir2 = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Ocultos por defecto...
         check1.isHidden = true
         check2.isHidden = true
+        
+        //Fields tipo password...
+        regPass.isSecureTextEntry = true
+        regPassConfirmed.isSecureTextEntry = true
+        
+        //Algo similiar a un TextWatcher de android...
+        regPass.addTarget(self, action: #selector(RegistroViewController.textField1DidChange(_:)),
+                          for: UIControlEvents.editingChanged)
+        regPassConfirmed.addTarget(self, action: #selector(RegistroViewController.textField2DidChange(_:)), for: UIControlEvents.editingChanged)
 
     }
+    
+    @objc func textField1DidChange(_ textField: UITextField) {
+        confir1 = textField.text!
+    }
+    
+    @objc func textField2DidChange(_ textField2: UITextField) {
+        confir2 = textField2.text!
+        
+        if confir1 == confir2 {
+            check1.isHidden = false
+            check2.isHidden = false
+        } else {
+            check1.isHidden = true
+            check2.isHidden = true
+        }
+        
+        if confir1.isEmpty && confir2.isEmpty {
+            check1.isHidden = true
+            check2.isHidden = true
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,11 +75,8 @@ class RegistroViewController: UIViewController {
         if !(user?.isEmpty)! && !(pass?.isEmpty)! && !(confirmdPass?.isEmpty)! {
             //Campos completos...
             print("entra")
-            if pass == confirmdPass {
-                check1.isHidden = false
-                check2.isHidden = false
+            if confir1 == confir2 {
                 
-                //print("Password iguales 1\(pass) 2\(confirmdPass)")
                 /*guard let cliente = ClienteHttp(target: "setmember", authorization: "Basic \(base64LoginString)", responseObject: self) else {
                     return
                 }
