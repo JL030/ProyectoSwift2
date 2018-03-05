@@ -537,7 +537,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="16" height="16"/>
+        <image name="Image" width="320" height="240"/>
         <image name="chek" width="300" height="300"/>
         <image name="logo" width="500" height="500"/>
         <image name="prueba2" width="600" height="600"/>

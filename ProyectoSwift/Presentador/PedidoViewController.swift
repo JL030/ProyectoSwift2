@@ -11,6 +11,10 @@ import UIKit
 class PedidoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var pedidos = [Pedido]()
+    var resultado = 0.0
+    
+    @IBOutlet weak var pedidotv: UITableView!
+    @IBOutlet weak var precioTotal: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,12 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             Pedido(nombre: "Napolitana", precio: 0.85),
             Pedido(nombre: "Tarta de queso", precio: 3.10)
         ]
+        
+        //var resultado = 0.0
+        for pedido in self.pedidos {
+            resultado += pedido.precio
+        }
+        self.precioTotal.text = "\(resultado) €"
         
     }
     
@@ -52,11 +62,9 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         //cell.precio?.text = "Precio"
         
         return cell
+        
     }
     
-    
-    @IBOutlet weak var pedidotv: UITableView!
-    @IBOutlet weak var precioTotal: UILabel!
     
     var label : UILabel!
     var stepper : UIStepper!
@@ -70,8 +78,8 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             var precio = 0.0
             precio = self.pedidos[indexPath.row].precio
             
-            let total = precio * (Double(self.stepper.value))
-            let preciototal = String(format: "%.2f" , (Double(total)))
+            self.resultado += precio * (Double(self.stepper.value))
+            let preciototal = String(format: "%.2f" , (Double(self.resultado)))
             self.precioTotal.text = preciototal + " €"
         }))
         
@@ -107,12 +115,11 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             // Delete the row from the data source
-            pedidos.remove(at: indexPath.row)
+            self.pedidos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "chek.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "default-thumbnail.jpg",
       "scale" : "2x"
     },
     {
