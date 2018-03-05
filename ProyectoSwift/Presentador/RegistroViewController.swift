@@ -37,22 +37,20 @@ class RegistroViewController: UIViewController {
         let pass = regPass.text
         let confirmdPass = regPassConfirmed.text
         
-        if (user?.isEmpty)! && (pass?.isEmpty)! && (confirmdPass?.isEmpty)! {
+        if !(user?.isEmpty)! && !(pass?.isEmpty)! && !(confirmdPass?.isEmpty)! {
             //Campos completos...
             print("entra")
             if pass == confirmdPass {
-                print("Password iguales 1\(pass) 2\(confirmdPass)")
+                check1.isHidden = false
+                check2.isHidden = false
+                
+                //print("Password iguales 1\(pass) 2\(confirmdPass)")
                 /*guard let cliente = ClienteHttp(target: "setmember", authorization: "Basic \(base64LoginString)", responseObject: self) else {
                     return
                 }
                 cliente.request()*/
-                check1.isHidden = false
-                check2.isHidden = false
                 
             } else {
-                
-                
-                
                 
             }
         } else {

@@ -11,7 +11,7 @@ import UIKit
 class ClienteHttp{
     // URL de nuestra
     //"https://ide.c9.io/izvdamdaw/curso1718"
-    let urlApi: String = "https://bbdd-javi030.c9users.io/IosPanaderia/api.php"
+    let urlApi: String = "https://bbdd-javi030.c9users.io/IosPanaderia/"
     //let urlApi: String = "https://rest-angelo8.c9users.io/proyecto/api.php"
     let respuesta: OnHttpResponse
     var urlPeticion: URLRequest

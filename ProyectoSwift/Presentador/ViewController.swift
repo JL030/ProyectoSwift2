@@ -37,7 +37,7 @@ class ViewController: UIViewController, OnHttpResponse {
             let loginData = loginString.data(using: String.Encoding.utf8)!
             let base64LoginString = loginData.base64EncodedString()
             
-            guard let cliente = ClienteHttp(target: "", authorization: "Basic \(base64LoginString)", responseObject: self) else {
+            guard let cliente = ClienteHttp(target: "member", authorization: "Basic \(base64LoginString)", responseObject: self) else {
                 return
             }
             cliente.request()
@@ -45,7 +45,6 @@ class ViewController: UIViewController, OnHttpResponse {
         } else {
             print("error de campo")
         }
-        
         
     }
     
@@ -55,7 +54,7 @@ class ViewController: UIViewController, OnHttpResponse {
         if segue.destination is ViewControllerMain {
             
             let vc = segue.destination as? ViewControllerMain
-            vc?.texto = tokenReal
+            vc?.usuario = "current"
         }
         
         // Segue al principal
@@ -68,8 +67,8 @@ class ViewController: UIViewController, OnHttpResponse {
     
     func onDataReceived(data: Data) {
         
-        //let resultado = RestJsonUtil.jsonToDict(data: data)
-        //print(resultado?.values)
+        /*let resultado = RestJsonUtil.jsonToDict(data: data)
+        print(resultado?.description["categories"] as? String)*/
         
         //let login = Login.init(token: (resultado?.values as? String)!)
         
@@ -82,8 +81,8 @@ class ViewController: UIViewController, OnHttpResponse {
                 
                 tokenReal = prueba.token
                 
-                //performSegue(withIdentifier: "loginCorrecto", sender: self)
-                performSegue(withIdentifier: "seguePrincipal", sender: self)
+                performSegue(withIdentifier: "loginCorrecto", sender: self)
+                //performSegue(withIdentifier: "seguePrincipal", sender: self)
 
                 
             }

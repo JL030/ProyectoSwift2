@@ -10,8 +10,5 @@ import Foundation
 
 struct Login: Codable {
     
-    //var id : Int
     var token: String
-    //var login : String
-    //var password : String
 }

@@ -8,15 +8,14 @@
 
 import UIKit
 
-
 class ViewControllerMain: UIViewController {
     
     @IBOutlet weak var labelprueba: UILabel!
-    var texto = ""
+    var usuario = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelprueba.text = texto
+        //labelprueba.text = usuario
         
         
         // Do any additional setup after loading the view.
