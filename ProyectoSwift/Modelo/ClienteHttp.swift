@@ -73,40 +73,4 @@ class ClienteHttp{
             self.respuesta.onDataReceived(data: datos)
         }
     }
-
-    func getCategories(){
-        guard let cliente = ClienteHttp(target: "family", authorization: "Bearer amF2aTpqYXZp", responseObject : self as! OnHttpResponse) else {
-            return
-        }
-        cliente.request()
-    }
-    
-    func saveCategories(_ data : Data){
-        
-        do{
-            let categories = try JSONDecoder().decode(Family.self, from: data)
-            print(categories)
-        }catch{
-            print("Error")
-        }
-    }
-   /* static func downloadImage(id : String) -> UIImage{
-        var foto:UIImage
-        let urlImage : String = "https://bbdd-javi030.c9users.io/IosPanaderia/ \(id).png"
-        guard let url = URL(string : urlImage) else{
-            print("error en \(id).png");}
-        let group = DispatchGroup()
-        group.enter()
-        let hilo = DispatchQueue(label : "imageDownload", qos : .default, attributes : .concurrent)
-        hilo.async {
-            guard let data = try? Data(contentsOf: url),
-                let img = UIImage(data : data) else{
-                    group.leave()
-                    return
-            }
-            group.leave()
-            foto = img
-        }
-        return UIImage(data: img)
-    }*/
 }

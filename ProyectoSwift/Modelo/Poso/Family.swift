@@ -9,7 +9,7 @@
 import UIKit
 
 struct Family : Decodable{
-    var id : Int
+    var id : String
     var family : String
     var imagen : String
 }
