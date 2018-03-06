@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewControllerProductos: UICollectionViewController {
+class CollectionViewControllerProductos: UIViewController {
     
     public static var idCategoria = ""
 
@@ -21,7 +21,7 @@ class CollectionViewControllerProductos: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        /*self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)*/
 
         // Do any additional setup after loading the view.
     }
@@ -43,7 +43,7 @@ class CollectionViewControllerProductos: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+   /* override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
@@ -60,7 +60,7 @@ class CollectionViewControllerProductos: UICollectionViewController {
         // Configure the cell
     
         return cell
-    }
+    }*/
 
     // MARK: UICollectionViewDelegate
 

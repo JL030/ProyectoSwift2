@@ -28,7 +28,7 @@ extension UIImageView {
     }
 }
 
-class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
+class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var token = ""
     var categorias = [Family]()
@@ -61,10 +61,6 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
         idCat = categorias[indexPath.row].id
         cell.nameLabel.text = categorias[indexPath.row].family
         cell.imageView.downloadedFrom(link: completeLink)
-        if cell.isSelected{
-            print("AQUI YEEEH")
-            self.performSegue(withIdentifier: "segueACollecctionP", sender: self)
-        }
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,12 +72,12 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    func collectionView(_ collectionView : UICollectionView, didSelectedItemAt indexPath: IndexPath){
-        /*let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Aqui entra")
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let desVC = mainStoryboard.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
-        desVC.idCategoria = categorias[indexPath.row].id
-        print("ID CAT -> ", desVC.idCategoria)*/
         let id = categorias[indexPath.row].id
         CollectionViewControllerProductos.idCategoria = id
+        self.navigationController?.pushViewController(desVC, animated: true)
     }
 }
