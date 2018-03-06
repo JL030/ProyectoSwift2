@@ -8,8 +8,9 @@
 
 import UIKit
 
-struct Family : Decodable{
-    var id : String
-    var family : String
-    var imagen : String
+struct Family : Codable{
+    var id : String = ""
+    var family : String = ""
+    var imagen : String = ""
+    var imagenR : Data?
 }

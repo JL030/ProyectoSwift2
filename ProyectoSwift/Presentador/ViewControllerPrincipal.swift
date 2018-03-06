@@ -12,12 +12,12 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     var token = ""
     var categorias = [Family]()
     var imagenes : [UIImage] = []
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-  
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categorias.count
@@ -43,6 +43,4 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
             let vc = segue.destination as? ViewControllerMain
             vc?.token = token
         }
-    }
-    
 }
