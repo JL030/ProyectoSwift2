@@ -131,4 +131,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    @IBAction func guardarTicket(_ sender: UIButton) {
+        
+    }
 }
