@@ -34,6 +34,7 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     var categorias = [Family]()
     var imagenes : [UIImage] = []
     var productos = [Product]()
+    var idCat = ""
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -57,17 +58,30 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
         let completeLink = defaultLink + categorias[indexPath.row].imagen
         //print("imagen")
         //print(imagen)
+        idCat = categorias[indexPath.row].id
         cell.nameLabel.text = categorias[indexPath.row].family
         cell.imageView.downloadedFrom(link: completeLink)
+        if cell.isSelected{
+            print("AQUI YEEEH")
+            self.performSegue(withIdentifier: "segueACollecctionP", sender: self)
+        }
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Segue al menu inicial
-        //let item = sender as? UICollectionViewCell
         if segue.destination is ViewControllerMain {
             
             let vc = segue.destination as? ViewControllerMain
             vc?.token = token
         }
-}
+    }
+    
+    func collectionView(_ collectionView : UICollectionView, didSelectedItemAt indexPath: IndexPath){
+        /*let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let desVC = mainStoryboard.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
+        desVC.idCategoria = categorias[indexPath.row].id
+        print("ID CAT -> ", desVC.idCategoria)*/
+        let id = categorias[indexPath.row].id
+        CollectionViewControllerProductos.idCategoria = id
+    }
 }

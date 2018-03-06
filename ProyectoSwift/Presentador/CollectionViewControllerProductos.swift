@@ -11,10 +11,12 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class CollectionViewControllerProductos: UICollectionViewController {
+    
+    public static var idCategoria = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("CAT nueva -> ", CollectionViewControllerProductos.idCategoria)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
