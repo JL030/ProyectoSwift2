@@ -12,6 +12,7 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     var token = ""
     var categorias = [Family]()
     var imagenes : [UIImage] = []
+    var productos = [Product]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -38,9 +39,20 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDataSource {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Segue al menu inicial
+        //let item = sender as? UICollectionViewCell
+        if segue.destination is ViewControllerDescripcion {
+            
+            let token = segue.destination as? ViewControllerDescripcion
+            token?.token = self.token
+            //let id = collectionView.indexPath(for: item!)
+            token?.productos = self.productos
+            let detalle = segue.destination as! ViewControllerDescripcion
+            detalle.productos = [self.productos[0]]//[self.productos[(id?.row)!]]
+        }
         if segue.destination is ViewControllerMain {
             
             let vc = segue.destination as? ViewControllerMain
             vc?.token = token
         }
+}
 }

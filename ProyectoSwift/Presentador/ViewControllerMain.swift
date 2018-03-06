@@ -10,6 +10,7 @@ import UIKit
 
 class ViewControllerMain: UIViewController, OnHttpResponse {
     var categorias = [Family]()
+    var productos = [Product]()
     var imagenes : [UIImage] = []
     var token = ""
     @IBOutlet weak var labelprueba: UILabel!
@@ -38,14 +39,27 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
         print("ESTO ES")
         print(respuesta!)
         
-        do{
-            // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo
-            // convertimos
-            // en un objeto de la clase family.swift |data es los datos devueltos de la petición|
-            categorias = try JSONDecoder().decode([Family].self,
-                                                  from: try! JSONSerialization.data(withJSONObject: respuesta!["categories"]))
-        }catch {
-            print("Error al recibir los datos")
+        if respuesta!["product"] != nil {
+            do{
+                // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo
+                // convertimos
+                // en un objeto de la clase family.swift |data es los datos devueltos de la petición|
+                productos = try JSONDecoder().decode([Product].self,
+                                                      from: try! JSONSerialization.data(withJSONObject: respuesta!["product"]))
+            }catch {
+                print("Error al recibir los datos")
+            }
+        }
+        if respuesta!["categories"] != nil{
+            do{
+                // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo
+                // convertimos
+                // en un objeto de la clase family.swift |data es los datos devueltos de la petición|
+                categorias = try JSONDecoder().decode([Family].self,
+                                                      from: try! JSONSerialization.data(withJSONObject: respuesta!["categories"]))
+            }catch {
+                print("Error al recibir los datos")
+            }
         }
     }
     
@@ -61,9 +75,18 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             token?.token = self.token
             token?.imagenes = self.imagenes
             token?.categorias = self.categorias
+            token?.productos = self.productos
         }
     }
     
+    // Descargar Productos
+    
+    func descargarProductos(){
+        guard let cliente = ClienteHttp(target: "product", authorization: "Bearer " + token, responseObject: self) else {
+            return
+        }
+        cliente.request()
+    }
     // Descargar categorias
     
     func descargarCategorias(){
