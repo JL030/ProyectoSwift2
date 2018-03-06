@@ -25,7 +25,7 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
         // Categorias
         descargarCategorias()
         download()
-        
+        performSegue(withIdentifier: "seguePrincipal", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +39,7 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
         print("ESTO ES")
         print(respuesta!)
         
-        if respuesta!["product"] != nil {
+        /*if respuesta!["product"] != nil {
             do{
                 // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo
                 // convertimos
@@ -49,8 +49,8 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             }catch {
                 print("Error al recibir los datos")
             }
-        }
-        if respuesta!["categories"] != nil{
+        }*/
+        //if respuesta!["categories"] != nil{
             do{
                 // Obtenemos la respuesta de la peticion, como es un JSON, lo decodificamos y lo
                 // convertimos
@@ -60,7 +60,9 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             }catch {
                 print("Error al recibir los datos")
             }
-        }
+        //}
+        
+        print("Categorias -> ", categorias.count)
     }
     
     func onErrorReceivingData(message: String) {
@@ -74,7 +76,7 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             let token = segue.destination as? ViewControllerPrincipal
             token?.token = self.token
             token?.imagenes = self.imagenes
-            token?.categorias = self.categorias
+            token?.categorias.append(contentsOf: self.categorias)
             token?.productos = self.productos
         }
     }

@@ -106,7 +106,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Abd-Yb-RKM" kind="show" identifier="seguePrincipal" id="5oP-qW-t7h"/>
+                                    <segue destination="8OF-hp-kZQ" kind="show" identifier="seguePrincipal" id="3JB-Vf-Xxs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaC-Cr-a2l">
@@ -339,7 +339,7 @@
                                                 <navigationItem title="Principal" id="rp2-rP-zfN">
                                                     <barButtonItem key="leftBarButtonItem" title="Volver" id="x6z-R2-s9r">
                                                         <connections>
-                                                            <segue destination="aAO-rw-bna" kind="show" identifier="VolverPrincipalMain" id="R6t-ql-I1m"/>
+                                                            <segue destination="aAO-rw-bna" kind="show" identifier="volveAMain" id="szX-8L-Miu"/>
                                                         </connections>
                                                     </barButtonItem>
                                                 </navigationItem>
@@ -369,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXt-e0-cov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="408"/>
+            <point key="canvasLocation" x="1263" y="432"/>
         </scene>
         <!--View Controller Descripcion-->
         <scene sceneID="YKV-Mt-aal">
@@ -671,6 +671,7 @@
         <image name="prueba2" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R6t-ql-I1m"/>
+        <segue reference="3JB-Vf-Xxs"/>
+        <segue reference="szX-8L-Miu"/>
     </inferredMetricsTieBreakers>
 </document>
