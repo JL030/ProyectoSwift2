@@ -14,6 +14,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
     var token = ""
     var productos = [Product]()
     var productosFiltrados = [Product]()
+    var productosSeleccionados = [ProductPedidos]()
 
     @IBOutlet weak var totalPrecio: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -49,9 +50,23 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let main: UIStoryboard(name: "Main", bundle: nil)
-        let desVC = main.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
-        
+        print("Entra en el didSelected")
+        print("Producto seleccionado -> ", productos[indexPath.row].product)
+        let productoPedido = ProductPedidos.init(id_producto: productos[indexPath.row].id, precio: productos[indexPath.row].price)
+        productosSeleccionados.append(productoPedido)
+        print("Producto cesta -> ", productosSeleccionados.count)
+        /*if productosSeleccionados.con{
+                var cantidad = 1
+                let productoNuevo = ProductPedidos.init(id_producto: productos[indexPath.row].id, cantidad: cantidad)
+                productosSeleccionados.append(productoNuevo)
+                print("Nuevo producto añadido: ", productosSeleccionados.count)
+            }else{
+                var cantidad = productosSeleccionados[indexPath.row].cantidad
+                let cantidadNueva = cantidad + 1
+                productosSeleccionados[indexPath.row].cantidad = cantidadNueva
+                print("1 MAS")
+            }*/
+        totalPrecio.text = String(productosSeleccionados.count)
+        print("Cambiado")
     }
 }

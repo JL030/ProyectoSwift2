@@ -10,6 +10,5 @@ import UIKit
 
 struct ProductPedidos {
     var id_producto : String
-    var cantidad : Int
-    var id_categoria : String
+    var precio : String
 }
