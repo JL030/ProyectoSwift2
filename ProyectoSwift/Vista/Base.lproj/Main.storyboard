@@ -210,7 +210,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendRegister:" destination="XSM-sP-eTS" eventType="touchUpInside" id="seF-yV-EQF"/>
+                                    <action selector="sendRegister:" destination="XSM-sP-eTS" eventType="touchUpInside" id="sH7-co-NZF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2oh-MV-qtf">
@@ -225,8 +225,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWs-qg-48Q">
-                                <rect key="frame" x="147" y="584" width="67" height="10"/>
+                                <rect key="frame" x="147" y="584" width="67" height="19"/>
                                 <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <segue destination="JgB-Zm-evm" kind="show" id="Ojz-8T-ayQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,7 +259,7 @@
                             <constraint firstItem="WTD-k1-mpZ" firstAttribute="top" secondItem="2oh-MV-qtf" secondAttribute="bottom" constant="8" id="pyb-vD-j6I"/>
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="yRX-8b-JfF" secondAttribute="trailing" constant="89" id="rca-Oa-GOu"/>
                             <constraint firstItem="TV6-vE-SDM" firstAttribute="top" secondItem="gGR-fp-wft" secondAttribute="bottom" constant="26" id="tyK-s2-gPM"/>
-                            <constraint firstItem="s4f-7z-VBY" firstAttribute="bottom" secondItem="fWs-qg-48Q" secondAttribute="bottom" constant="73" id="u80-6p-Ncj"/>
+                            <constraint firstItem="s4f-7z-VBY" firstAttribute="bottom" secondItem="fWs-qg-48Q" secondAttribute="bottom" constant="64" id="u80-6p-Ncj"/>
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="2oh-MV-qtf" secondAttribute="trailing" constant="63" id="uDn-It-uUK"/>
                             <constraint firstItem="TV6-vE-SDM" firstAttribute="top" secondItem="gGR-fp-wft" secondAttribute="bottom" constant="26" id="vGE-nC-1vO"/>
                             <constraint firstItem="WTD-k1-mpZ" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="37" id="vVH-m0-Mlj"/>
@@ -625,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-bB-Uhe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="1279"/>
+            <point key="canvasLocation" x="1036" y="1270"/>
         </scene>
         <!--Ticket View Controller-->
         <scene sceneID="Zkd-9W-ef0">
@@ -763,5 +766,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="8iR-So-fh6"/>
         <segue reference="RK8-af-GcA"/>
+        <segue reference="Ojz-8T-ayQ"/>
     </inferredMetricsTieBreakers>
 </document>

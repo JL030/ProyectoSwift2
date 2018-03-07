@@ -45,7 +45,13 @@ class ViewController: UIViewController, OnHttpResponse {
             cliente.request()
             
         } else {
-            print("error de campo")
+            let alerta = UIAlertController(title: "Campos vacios", message:
+                "Porfavor, introduzca todos los datos", preferredStyle: .alert)
+            
+            let continueAction = UIAlertAction(title: "Volver", style: .default, handler:nil)
+            alerta.addAction(continueAction)
+            
+            self.present(alerta, animated: true, completion: nil)
         }
         
     }

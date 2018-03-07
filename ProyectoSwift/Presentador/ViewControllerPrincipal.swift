@@ -57,9 +57,8 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Segue al menu inicial
         if segue.destination is ViewControllerMain {
-            
             let vc = segue.destination as? ViewControllerMain
-            vc?.token = token
+            vc?.tokenMain = token
         }
         if segue.destination is CollectionViewControllerProductos{
             let vc = segue.destination as? CollectionViewControllerProductos

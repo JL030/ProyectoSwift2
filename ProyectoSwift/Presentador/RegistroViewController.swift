@@ -98,6 +98,14 @@ class RegistroViewController: UIViewController, OnHttpResponse {
                 
             } else {
                 
+                let alertError = UIAlertController(title: "Contraseña", message: "¡Los campos de contraseña deben ser iguales!", preferredStyle: .alert)
+                
+                let volver = UIAlertAction(title: "Volver", style: .default, handler: nil)
+                
+                alertError.addAction(volver)
+                
+                self.present(alertError, animated: true, completion: nil)
+                
             }
         } else {
             
