@@ -76,7 +76,14 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is TicketViewController{
+            let vc = segue.destination as? TicketViewController
+            vc?.token = self.token
+        }
+        
+    }
     
     var label : UILabel!
     var stepper : UIStepper!

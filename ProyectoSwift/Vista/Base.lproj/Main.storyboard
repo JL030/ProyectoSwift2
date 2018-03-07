@@ -654,7 +654,7 @@
                                         <state key="normal" title="Terminar pedido"/>
                                         <connections>
                                             <action selector="guardarTicket:" destination="fcN-rb-GZF" eventType="touchUpInside" id="QiX-ZT-BPi"/>
-                                            <segue destination="ckv-SO-euM" kind="show" id="Ta6-K6-e9W"/>
+                                            <segue destination="ckv-SO-euM" kind="show" identifier="segueATicketView" id="Ta6-K6-e9W"/>
                                         </connections>
                                     </button>
                                 </subviews>
