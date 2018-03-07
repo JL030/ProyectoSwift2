@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewControllerDescripcion: UIViewController, OnHttpResponse {
+class ViewControllerDescripcion: UIViewController {
     var token = ""
     var id : Int!
     var productos = [Product]()
+    var index : Int = 0
 
     @IBOutlet weak var labelProducto: UILabel!
     
@@ -21,22 +22,12 @@ class ViewControllerDescripcion: UIViewController, OnHttpResponse {
     @IBOutlet weak var añadir: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        descargarProductos()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // Descargar Productos
-    
-    func descargarProductos(){
-        guard let cliente = ClienteHttp(target: "product", authorization: "Bearer " + token, responseObject: self) else {
-            return
-        }
-        cliente.request()
     }
     
     func onDataReceived(data: Data) {

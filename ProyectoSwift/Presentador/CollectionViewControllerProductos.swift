@@ -15,6 +15,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
     var productos = [Product]()
     var productosFiltrados = [Product]()
     var productosSeleccionados = [ProductPedidos]()
+    var indexPath : IndexPath = []
 
     @IBOutlet weak var totalPrecio: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,7 +32,6 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
                 productosFiltrados.append(p)
             }
         }
-        
         print("Numero de P filtrados -> ", productosFiltrados.count)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +55,12 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
         let productoPedido = ProductPedidos.init(id_producto: productos[indexPath.row].id, precio: productos[indexPath.row].price, id_familia: productos[indexPath.row].id_family, producto: productos[indexPath.row].product, imagen: productos[indexPath.row].imagen)
         productosSeleccionados.append(productoPedido)
         print("Producto cesta -> ", productosSeleccionados.count)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell1", for: indexPath) as! CustomCollectionViewCellProductos
+        let main : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let desVC = main.instantiateViewController(withIdentifier: "desc") as! ViewControllerDescripcion
+        if cell.añadir.isSelected{
+            desVC.index = indexPath.row
+        }
         /*if productosSeleccionados.con{
                 var cantidad = 1
                 let productoNuevo = ProductPedidos.init(id_producto: productos[indexPath.row].id, cantidad: cantidad)
@@ -77,6 +83,14 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.token = self.token
             vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
             print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
+        }
+        if segue.destination is ViewControllerDescripcion{
+            let vc = segue.destination as? ViewControllerDescripcion
+            vc?.labelProducto.text = productos[vc!.index].product
+            let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
+            let completo = defaultLink + self.productos[vc!.index].imagen
+            vc?.imagenProducto.downloadedFrom(link: completo)
+            vc?.labelDescripcion.text = productos[vc!.index].description
         }
     }
 }
