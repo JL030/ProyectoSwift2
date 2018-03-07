@@ -41,7 +41,7 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         collectionView.dataSource = self
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return categorias.count
     }
     
@@ -63,6 +63,7 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
         if segue.destination is CollectionViewControllerProductos{
             let vc = segue.destination as? CollectionViewControllerProductos
             vc?.idCategoria = self.idCat
+            vc?.token = self.token
             print("ID PASADA -> ", vc?.idCategoria)
         }
     }

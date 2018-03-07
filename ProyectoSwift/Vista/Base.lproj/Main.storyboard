@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -444,10 +444,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Psi-WM-snI"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="sR4-OG-rae" id="BcG-5s-G76"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7N-6T-ycO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776.8000000000002" y="505.99700149925042"/>
+            <point key="canvasLocation" x="2793" y="500"/>
         </scene>
         <!--View Controller Descripcion-->
         <scene sceneID="YKV-Mt-aal">
@@ -560,14 +563,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Ta-hFt">
                                 <rect key="frame" x="0.0" y="559" width="375" height="108"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUn-sD-gmD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUn-sD-gmD">
                                         <rect key="frame" x="26" y="16" width="37.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0.00 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-Or-6lV">
-                                        <rect key="frame" x="287.5" y="16" width="49.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -587,22 +584,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Sk0-Or-6lV" firstAttribute="leading" secondItem="tUn-sD-gmD" secondAttribute="trailing" constant="224" id="0UA-qq-4sa"/>
                                     <constraint firstItem="ZbV-2Q-FYn" firstAttribute="leading" secondItem="6lL-5E-uSz" secondAttribute="trailing" constant="65" id="30g-6T-uwF"/>
                                     <constraint firstAttribute="bottom" secondItem="ZbV-2Q-FYn" secondAttribute="bottom" constant="21" id="3gR-PD-4IU"/>
                                     <constraint firstItem="ZbV-2Q-FYn" firstAttribute="leading" secondItem="6lL-5E-uSz" secondAttribute="trailing" constant="65" id="IKU-3Z-ApS"/>
                                     <constraint firstItem="tUn-sD-gmD" firstAttribute="leading" secondItem="DU6-Ta-hFt" secondAttribute="leading" constant="26" id="OcT-mI-dvZ"/>
                                     <constraint firstItem="tUn-sD-gmD" firstAttribute="top" secondItem="DU6-Ta-hFt" secondAttribute="top" constant="16" id="QoP-1E-l4Z"/>
                                     <constraint firstAttribute="trailing" secondItem="ZbV-2Q-FYn" secondAttribute="trailing" constant="33" id="RGx-wf-IkT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sk0-Or-6lV" secondAttribute="trailing" constant="26" id="TYi-y0-3aD"/>
-                                    <constraint firstItem="ZbV-2Q-FYn" firstAttribute="top" secondItem="Sk0-Or-6lV" secondAttribute="bottom" constant="20" id="VIL-ga-zH1"/>
                                     <constraint firstItem="6lL-5E-uSz" firstAttribute="top" secondItem="tUn-sD-gmD" secondAttribute="bottom" constant="20" id="Xj6-MZ-4Fl"/>
                                     <constraint firstItem="6lL-5E-uSz" firstAttribute="leading" secondItem="DU6-Ta-hFt" secondAttribute="leading" constant="33" id="emY-cN-7NN"/>
                                     <constraint firstAttribute="bottom" secondItem="6lL-5E-uSz" secondAttribute="bottom" constant="21" id="kYO-Bj-Ahm"/>
-                                    <constraint firstItem="Sk0-Or-6lV" firstAttribute="leading" secondItem="tUn-sD-gmD" secondAttribute="trailing" constant="224" id="p6T-Tw-pya"/>
-                                    <constraint firstItem="ZbV-2Q-FYn" firstAttribute="top" secondItem="Sk0-Or-6lV" secondAttribute="bottom" constant="20" id="pDN-Lm-Wwt"/>
                                     <constraint firstItem="6lL-5E-uSz" firstAttribute="top" secondItem="tUn-sD-gmD" secondAttribute="bottom" constant="20" id="uWG-Yb-bTK"/>
-                                    <constraint firstItem="Sk0-Or-6lV" firstAttribute="top" secondItem="DU6-Ta-hFt" secondAttribute="top" constant="16" id="v9g-LP-MyC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -621,7 +612,6 @@
                     <navigationItem key="navigationItem" title="Cesta" id="roZ-bT-scT"/>
                     <connections>
                         <outlet property="pedidotv" destination="hVw-9t-XCz" id="Neu-fi-azO"/>
-                        <outlet property="precioTotal" destination="Sk0-Or-6lV" id="D6v-xU-Kcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-bB-Uhe" sceneMemberID="firstResponder"/>
@@ -813,7 +803,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8iR-So-fh6"/>
-        <segue reference="RK8-af-GcA"/>
+        <segue reference="szX-8L-Miu"/>
         <segue reference="Ojz-8T-ayQ"/>
     </inferredMetricsTieBreakers>
 </document>

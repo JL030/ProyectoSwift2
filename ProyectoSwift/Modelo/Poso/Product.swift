@@ -1,18 +1,10 @@
-//
-//  Product.swift
-//  ProyectoSwift
-//
-//  Created by Javier Lopez Girela on 1/3/18.
-//  Copyright © 2018 Javier Lopez Girela. All rights reserved.
-//
+import UIKit
 
-import Foundation
-
-struct Product {
-    var id : Int
-    var id_family : Int
-    var product : String
-    var price : Double
+struct Product : Codable {
     var description : String
+    var id : String
+    var id_family : String
     var imagen : String
+    var price : String
+    var product : String
 }
