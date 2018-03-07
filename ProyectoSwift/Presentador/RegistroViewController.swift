@@ -1,5 +1,4 @@
-//
-//  RegistroViewController.swift
+///  RegistroViewController.swift
 //  ProyectoSwift
 //
 //  Created by Angel on 12/02/2018.
@@ -8,7 +7,18 @@
 
 import UIKit
 
-class RegistroViewController: UIViewController {
+class RegistroViewController: UIViewController, OnHttpResponse {
+    
+    func onDataReceived(data: Data) {
+        //let resultado = RestJsonUtil.jsonToDict(data: data)
+        //print(resultado?.values)
+    }
+    
+    func onErrorReceivingData(message: String) {
+        
+    }
+    
+    
     
     @IBOutlet weak var regUser: UITextField!
     @IBOutlet weak var regPass: UITextField!
@@ -32,11 +42,11 @@ class RegistroViewController: UIViewController {
         regPass.isSecureTextEntry = true
         regPassConfirmed.isSecureTextEntry = true
         
-        //Algo similiar a un TextWatcher de android...
+        //Algo similiar a un TextWatcher de android que utilizan las funciones de textFieldDidChange
         regPass.addTarget(self, action: #selector(RegistroViewController.textField1DidChange(_:)),
                           for: UIControlEvents.editingChanged)
         regPassConfirmed.addTarget(self, action: #selector(RegistroViewController.textField2DidChange(_:)), for: UIControlEvents.editingChanged)
-
+        
     }
     
     @objc func textField1DidChange(_ textField: UITextField) {
@@ -60,7 +70,7 @@ class RegistroViewController: UIViewController {
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,10 +87,14 @@ class RegistroViewController: UIViewController {
             print("entra")
             if confir1 == confir2 {
                 
-                /*guard let cliente = ClienteHttp(target: "setmember", authorization: "Basic \(base64LoginString)", responseObject: self) else {
+                var namesUser = [String: Any]()
+                namesUser = ["login": user!, "password": pass!]
+                //let json = RestJsonUtil.dictToJson(data: namesUser)
+                guard let registro = ClienteHttp.init(target: "setMember", authorization: "Basic YW5nZWw6YW5nZWw=", responseObject: self, "POST", namesUser) else {
                     return
                 }
-                cliente.request()*/
+                registro.request()
+                performSegue(withIdentifier: "registrado", sender: self)
                 
             } else {
                 
@@ -97,23 +111,20 @@ class RegistroViewController: UIViewController {
             
         }
         
-        //var parameters = ["user": user, "pass":pass]
-        
-        
         
     }
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
