@@ -13,6 +13,9 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     var pedidos = [Pedido]()
     var resultado = 0.0
     var user = ""
+    // AÑADIDO POR JAVI
+    var token = ""
+    var productosSeleccionados = [ProductPedidos]()
     
     @IBOutlet weak var pedidotv: UITableView!
     @IBOutlet weak var precioTotal: UILabel!

@@ -69,4 +69,14 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
         totalPrecio.text = String(productosSeleccionados.count)
         print("Cambiado")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is PedidoViewController{
+            let vc = segue.destination as? PedidoViewController
+            vc?.token = self.token
+            vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
+            print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
+        }
+    }
 }

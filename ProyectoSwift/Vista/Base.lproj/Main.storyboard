@@ -402,6 +402,11 @@
                                                 <segue destination="8OF-hp-kZQ" kind="show" identifier="volverPrincipal" id="qcl-eh-P41"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Terminar" id="Ydu-ac-wdR">
+                                            <connections>
+                                                <segue destination="fcN-rb-GZF" kind="show" id="qye-Xd-jsd"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -870,6 +875,7 @@
         <image name="prueba2" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qye-Xd-jsd"/>
         <segue reference="qcl-eh-P41"/>
         <segue reference="szX-8L-Miu"/>
         <segue reference="Ojz-8T-ayQ"/>
