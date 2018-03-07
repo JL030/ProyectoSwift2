@@ -325,6 +325,7 @@
                                                     <connections>
                                                         <outlet property="imageView" destination="kBK-7z-TNa" id="jER-xo-9SP"/>
                                                         <outlet property="nameLabel" destination="tK9-ba-Rk0" id="ATC-tV-M1p"/>
+                                                        <segue destination="Blg-Dy-d6B" kind="show" identifier="segueProductos" id="7zl-kz-soj"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>

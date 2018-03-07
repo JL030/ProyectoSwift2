@@ -40,9 +40,6 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-        print("token -> ", token)
-        print("Familia -> ", categorias.count)
-        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categorias.count
@@ -50,14 +47,8 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
-        /*if imagenes.count > 0{
-            print(imagenes.count)
-            cell.imageView.image = imagenes[indexPath.row]
-        }*/
         let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
         let completeLink = defaultLink + categorias[indexPath.row].imagen
-        //print("imagen")
-        //print(imagen)
         idCat = categorias[indexPath.row].id
         cell.nameLabel.text = categorias[indexPath.row].family
         cell.imageView.downloadedFrom(link: completeLink)
@@ -70,6 +61,11 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
             let vc = segue.destination as? ViewControllerMain
             vc?.token = token
         }
+        if segue.destination is CollectionViewControllerProductos{
+            let vc = segue.destination as? CollectionViewControllerProductos
+            vc?.idCategoria = self.idCat
+            print("ID PASADA -> ", vc?.idCategoria)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -77,7 +73,6 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let desVC = mainStoryboard.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
         let id = categorias[indexPath.row].id
-        CollectionViewControllerProductos.idCategoria = id
         self.navigationController?.pushViewController(desVC, animated: true)
     }
 }
