@@ -28,18 +28,19 @@ extension UIImageView {
     }
 }
 
-class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var token = ""
     var categorias = [Family]()
     var imagenes : [UIImage] = []
     var productos = [Product]()
-    var idCat = ""
-    
+    var idCat : String = ""
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        descargarProductos()
+        print("PRODUCTOS RECIBIDOS -> ", productos.count)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return categorias.count
@@ -49,7 +50,6 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
         let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
         let completeLink = defaultLink + categorias[indexPath.row].imagen
-        idCat = categorias[indexPath.row].id
         cell.nameLabel.text = categorias[indexPath.row].family
         cell.imageView.downloadedFrom(link: completeLink)
         return cell
@@ -62,17 +62,42 @@ class ViewControllerPrincipal: UIViewController, UICollectionViewDelegate, UICol
         }
         if segue.destination is CollectionViewControllerProductos{
             let vc = segue.destination as? CollectionViewControllerProductos
-            vc?.idCategoria = self.idCat
             vc?.token = self.token
-            print("ID PASADA -> ", vc?.idCategoria)
+            vc?.productos.append(contentsOf: self.productos)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Aqui entra")
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let desVC = mainStoryboard.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
-        let id = categorias[indexPath.row].id
-        self.navigationController?.pushViewController(desVC, animated: true)
+        idCat = categorias[indexPath.row].id
+        print("ID FILA -> ", self.idCat)
+        desVC.idCategoria = categorias[indexPath.row].id
+        print("ID PASADA -> ", desVC.idCategoria)
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = .red
+    }
+    
+    func onDataReceived(data: Data) {
+    
+        let respuesta = RestJsonUtil.jsonToDict(data: data)
+        
+        do{
+            productos = try JSONDecoder().decode([Product].self,
+                                                 from: try! JSONSerialization.data(withJSONObject: respuesta!["product"]))
+        }catch{
+            print("ERROR ABC")
+        }
+    }
+    
+    func onErrorReceivingData(message: String) {
+        print("ERRORRRR")
+    }
+    // Descargar Productos
+    func descargarProductos(){
+        guard let cliente = ClienteHttp(target: "product", authorization: "Bearer " + self.token, responseObject: self) else {
+            return
+        }
+        cliente.request()
     }
 }

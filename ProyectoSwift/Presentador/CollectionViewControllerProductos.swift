@@ -8,56 +8,39 @@
 
 import UIKit
 
-class CollectionViewControllerProductos: UIViewController, OnHttpResponse, UICollectionViewDataSource {
+class CollectionViewControllerProductos: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var idCategoria = ""
+    var idCategoria : String = ""
     var token = ""
     var productos = [Product]()
+    var productosFiltrados = [Product]()
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        collectionView.delegate = self
         print("CAT nueva -> ", self.idCategoria)
-        descargarProductos()
-        collectionView.reloadData()
-    }
-    
-    // Descargar Productos
-    func descargarProductos(){
-        guard let cliente = ClienteHttp(target: "product", authorization: "Bearer " + self.token, responseObject: self) else {
-            return
+        print("PRODUCTOS A MOSTRAR ->", productos.count)
+        for p in productos{
+            if p.id_family == self.idCategoria{
+                print("ID_FAMILY -> ",p.id_family)
+                print("ID CATEGORIA -> ", self.idCategoria)
+                productosFiltrados.append(p)
+            }
         }
-        cliente.request()
+        print("Numero de P filtrados -> ", productosFiltrados.count)
     }
-    
-    func onDataReceived(data: Data) {
-        print("ENTRA")
-        let respuesta = RestJsonUtil.jsonToDict(data: data)
-        print("RESPUESTA -> " , respuesta)
-        
-        do{
-            productos = try JSONDecoder().decode([Product].self,
-                                                 from: try! JSONSerialization.data(withJSONObject: respuesta!["product"]))
-            print("PRODUCTOS -> ", productos.count)
-        }catch{
-            print("ERROR ABC")
-        }
-    }
-    
-    func onErrorReceivingData(message: String) {
-        print("ERRORRRR")
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.productos.count
+        return self.productosFiltrados.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell1", for: indexPath) as! CustomCollectionViewCellProductos
+    
         let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
-        let completo = defaultLink + self.productos[indexPath.row].imagen
-        cell.labelProducto.text = productos[indexPath.row].product
+        let completo = defaultLink + self.productosFiltrados[indexPath.row].imagen
+        cell.labelProducto.text = productosFiltrados[indexPath.row].product
         cell.imagenProducto.downloadedFrom(link: completo)
         return cell
     }
