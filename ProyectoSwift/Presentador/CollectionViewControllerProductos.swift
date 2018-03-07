@@ -52,7 +52,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Entra en el didSelected")
         print("Producto seleccionado -> ", productos[indexPath.row].product)
-        let productoPedido = ProductPedidos.init(id_producto: productos[indexPath.row].id, precio: productos[indexPath.row].price, id_familia: productos[indexPath.row].id_family, producto: productos[indexPath.row].product)
+        let productoPedido = ProductPedidos.init(id_producto: productos[indexPath.row].id, precio: productos[indexPath.row].price, id_familia: productos[indexPath.row].id_family, producto: productos[indexPath.row].product, imagen: productos[indexPath.row].imagen)
         productosSeleccionados.append(productoPedido)
         print("Producto cesta -> ", productosSeleccionados.count)
         /*if productosSeleccionados.con{

@@ -13,4 +13,5 @@ struct ProductPedidos {
     var precio : String
     var id_familia : String
     var producto : String
+    var imagen: String
 }
