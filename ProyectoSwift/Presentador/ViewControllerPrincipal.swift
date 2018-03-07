@@ -52,6 +52,11 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
         let completeLink = defaultLink + categorias[indexPath.row].imagen
         cell.nameLabel.text = categorias[indexPath.row].family
         cell.imageView.downloadedFrom(link: completeLink)
+        
+        if cell.isSelected {
+            self.idCat = String(indexPath.row)
+            print("GUARDA ID CAT -> ", idCat)
+        }
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,6 +69,8 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
             let vc = segue.destination as? CollectionViewControllerProductos
             vc?.token = self.token
             vc?.productos.append(contentsOf: self.productos)
+            vc?.idCategoria = idCat
+            print("ID CAT YEEH -> ", idCat )
         }
     }
     

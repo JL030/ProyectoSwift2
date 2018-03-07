@@ -15,6 +15,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
     var productos = [Product]()
     var productosFiltrados = [Product]()
 
+    @IBOutlet weak var totalPrecio: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +30,28 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
                 productosFiltrados.append(p)
             }
         }
+        
         print("Numero de P filtrados -> ", productosFiltrados.count)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.productosFiltrados.count
+        return self.productos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell1", for: indexPath) as! CustomCollectionViewCellProductos
     
         let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
-        let completo = defaultLink + self.productosFiltrados[indexPath.row].imagen
-        cell.labelProducto.text = productosFiltrados[indexPath.row].product
+        let completo = defaultLink + self.productos[indexPath.row].imagen
+        //cell.labelProducto.text = productos[indexPath.row].product
         cell.imagenProducto.downloadedFrom(link: completo)
+        let euro = "€"
+        cell.labelPrecio.text = productos[indexPath.row].price + euro
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let main: UIStoryboard(name: "Main", bundle: nil)
+        let desVC = main.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
+        
     }
 }

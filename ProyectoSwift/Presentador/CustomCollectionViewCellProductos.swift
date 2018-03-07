@@ -10,6 +10,8 @@ import UIKit
 
 class CustomCollectionViewCellProductos: UICollectionViewCell {
     
+    @IBOutlet weak var labelPrecio: UILabel!
     @IBOutlet weak var imagenProducto: UIImageView!
     @IBOutlet weak var labelProducto: UILabel!
+    @IBOutlet weak var añadir: UIButton!
 }
