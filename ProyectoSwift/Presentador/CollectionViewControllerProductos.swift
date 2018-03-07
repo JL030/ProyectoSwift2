@@ -17,6 +17,7 @@ class CollectionViewControllerProductos: UIViewController, OnHttpResponse, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
         print("CAT nueva -> ", self.idCategoria)
         descargarProductos()
         collectionView.reloadData()
@@ -53,8 +54,11 @@ class CollectionViewControllerProductos: UIViewController, OnHttpResponse, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell1", for: indexPath) as! CustomCollectionViewCellProductos
         let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
+        let completo = defaultLink + self.productos[indexPath.row].imagen
+        cell.labelProducto.text = productos[indexPath.row].product
+        cell.imagenProducto.downloadedFrom(link: completo)
         return cell
     }
 }

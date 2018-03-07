@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomCollectionViewCellProductos: UICollectionViewCell {
-    @IBOutlet weak var imagenProducto: UIImageView!
     
+    @IBOutlet weak var imagenProducto: UIImageView!
     @IBOutlet weak var labelProducto: UILabel!
 }
