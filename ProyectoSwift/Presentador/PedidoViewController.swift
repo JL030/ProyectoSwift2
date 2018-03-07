@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PedidoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PedidoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OnHttpResponse {
     
     var pedidos = [Pedido]()
     var resultado = 0.0
@@ -34,6 +34,14 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             resultado += pedido.precio
         }
         self.precioTotal.text = "\(resultado) €"
+        
+    }
+    
+    func onDataReceived(data: Data) {
+        
+    }
+    
+    func onErrorReceivingData(message: String) {
         
     }
     
@@ -133,6 +141,41 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func guardarTicket(_ sender: UIButton) {
+        /*var totalproducto = [Pedido]()
         
+        for pedido in self.pedidos {
+            
+            var nomb = pedido.nombre
+            var precios = pedido.precio
+            var canti = pedido.cantidad
+            //var produc = Pedido(nombre: "nombre", precio: 0.0)
+            //totalproducto.append(produc)
+            
+            //print(totalproducto)
+            print("Nombre:" + nomb)
+            print("Precio:" + "\(precios)")
+            print("Cantidad:" + "\(canti)")
+        }
+        
+        //self.precioTotal.text = "\(resultado) €"*/
+        
+        
+        //Probando con datos fijos a la espera de lo de Javi
+        let idticket = 1
+        let idproduct = 1
+        let quantity = 1
+        let price = 1
+                
+        var datos = [String: Any]()
+        datos = ["id_ticket": idticket, "id_product": idproduct, "quantity": quantity, "price": price]
+        
+        guard let insertarTicket = ClienteHttp.init(target: "setTicketDetail", authorization: "Basic YW5nZWw6YW5nZWw=", responseObject: self, "POST", datos) else {
+            return
+        }
+        insertarTicket.request()
+                
+            
+            
     }
+    
 }

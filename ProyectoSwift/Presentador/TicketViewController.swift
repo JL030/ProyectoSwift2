@@ -64,8 +64,8 @@ class TicketViewController: UIViewController, OnHttpResponse {
         }
         
         //let cell:pedidoTableViewCell = pedidoTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-        cell.idticketlabel.text = tickets[indexPath.row].id
-        cell.idmemberlabel.text = tickets[indexPath.row].id_member
+        cell.idticketlabel.text = String(tickets[indexPath.row].id)
+        cell.idmemberlabel.text = String(tickets[indexPath.row].id_member)
         cell.dateticketlabel.text = tickets[indexPath.row].date
         
         return cell
