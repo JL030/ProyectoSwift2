@@ -12,6 +12,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     
     var pedidos = [Pedido]()
     var resultado = 0.0
+    var user = ""
     
     @IBOutlet weak var pedidotv: UITableView!
     @IBOutlet weak var precioTotal: UILabel!

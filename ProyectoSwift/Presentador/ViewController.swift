@@ -14,6 +14,7 @@ class ViewController: UIViewController, OnHttpResponse {
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passText: UITextField!
     var tokenReal = ""
+    var usuario = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class ViewController: UIViewController, OnHttpResponse {
                 return
             }
             cliente.request()
+            usuario = user!
             
         } else {
             let alerta = UIAlertController(title: "Campos vacios", message:
@@ -63,6 +65,9 @@ class ViewController: UIViewController, OnHttpResponse {
             
             let vc = segue.destination as? ViewControllerMain
             vc?.tokenMain = tokenReal
+            
+            let pv = segue.destination as? PedidoViewController
+            pv?.user = usuario
             
         }
     }
