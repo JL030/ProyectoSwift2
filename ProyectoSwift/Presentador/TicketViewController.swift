@@ -8,28 +8,69 @@
 
 import UIKit
 
-class TicketViewController: UIViewController {
-
+class TicketViewController: UIViewController, OnHttpResponse {
+    
+    var tickets = [Ticket]()
+    var token = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        print("token ", token)
+        print("Ticket ", tickets.count)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
     }
-    */
-
+    
+    func onDataReceived(data: Data){
+        let respuesta = RestJsonUtil.jsonToDict(data : data)
+        
+        do{
+            tickets = try JSONDecoder().decode([Ticket].self, from: try! JSONSerialization.data(withJSONObject: respuesta!["ticket"]))
+        }
+        catch {
+            print("Error al recibir los datos.")
+        }
+        
+        
+    }
+    
+    func onErrorReceivingData(message: String){
+        print("Error al recibir los datos.")
+    }
+    
+    func decargarTicket(){
+        guard let miTicket = ClienteHttp(target: "ticket", authorization: "Bearer " + token, responseObject: self) else {
+            return
+        }
+        miTicket.request()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tickets.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "TicketTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TicketTableViewCell else {
+            fatalError("Error nena")
+        }
+        
+        //let cell:pedidoTableViewCell = pedidoTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+        cell.idticketlabel.text = tickets[indexPath.row].id
+        cell.idmemberlabel.text = tickets[indexPath.row].id_member
+        cell.dateticketlabel.text = tickets[indexPath.row].date
+        
+        return cell
+        
+    }
+    
 }
+

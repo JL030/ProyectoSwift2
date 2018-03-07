@@ -9,8 +9,8 @@
 import Foundation
 
 struct Ticket {
-    var id : Int
+    var id : String
     var date : String
-    var id_member : Int
-    var id_client : Int
+    var id_member : String
+    var id_client : String
 }
