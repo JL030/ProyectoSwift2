@@ -80,7 +80,7 @@
                     <connections>
                         <outlet property="passText" destination="La7-T5-fij" id="eIY-TT-s6O"/>
                         <outlet property="userText" destination="u5d-kL-cyQ" id="94W-JE-UMs"/>
-                        <segue destination="aAO-rw-bna" kind="show" identifier="loginCorrecto" id="RK8-af-GcA"/>
+                        <segue destination="aAO-rw-bna" kind="show" identifier="login" id="RK8-af-GcA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJs-ZK-cC2" sceneMemberID="firstResponder"/>
@@ -119,6 +119,9 @@
                                 <state key="normal" title="Cerrar Sesion">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cerrarSesion:" destination="aAO-rw-bna" eventType="touchUpInside" id="5op-rS-GPX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1a-3d-AQ7">
                                 <rect key="frame" x="96" y="348" width="182" height="34"/>
@@ -151,6 +154,7 @@
                     </view>
                     <connections>
                         <outlet property="labelprueba" destination="N1a-3d-AQ7" id="AmF-ny-fa7"/>
+                        <segue destination="JgB-Zm-evm" kind="show" identifier="logout" id="M6v-w7-lMr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYx-aS-UIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -758,6 +762,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8iR-So-fh6"/>
-        <segue reference="szX-8L-Miu"/>
+        <segue reference="RK8-af-GcA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,14 +12,14 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
     var categorias = [Family]()
     var productos = [Product]()
     var imagenes : [UIImage] = []
-    var token = ""
+    var tokenMain = ""
     @IBOutlet weak var labelprueba: UILabel!
     var usuario = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("TOKEN 1")
-        print(token)
+        print(tokenMain)
         //labelprueba.text = usuario
         
         // Categorias
@@ -69,22 +69,32 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
         print("Error al recibir los datos 1")
     }
     
+    @IBAction func cerrarSesion(_ sender: UIButton) {
+        performSegue(withIdentifier: "logout", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Segue al principal
         if segue.destination is ViewControllerPrincipal{
             let token = segue.destination as? ViewControllerPrincipal
-            token?.token = self.token
+            token?.token = self.tokenMain
             token?.imagenes = self.imagenes
             token?.categorias.append(contentsOf: self.categorias)
             token?.productos = self.productos
+        }
+        
+        if segue.destination is ViewController {
+            
+            let vcp = segue.destination as? ViewController
+            vcp?.tokenReal = ""
         }
     }
     
     // Descargar Productos
     
     func descargarProductos(){
-        guard let cliente = ClienteHttp(target: "product", authorization: "Bearer " + token, responseObject: self) else {
+        guard let cliente = ClienteHttp(target: "product", authorization: "Bearer " + tokenMain, responseObject: self) else {
             return
         }
         cliente.request()
@@ -92,7 +102,7 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
     // Descargar categorias
     
     func descargarCategorias(){
-        guard let cliente = ClienteHttp(target: "family", authorization: "Bearer " + token, responseObject: self) else {
+        guard let cliente = ClienteHttp(target: "family", authorization: "Bearer " + tokenMain, responseObject: self) else {
             return
         }
         cliente.request()
