@@ -18,6 +18,7 @@ class TicketViewController: UIViewController, OnHttpResponse {
         
         print("token ", token)
         print("Ticket ", tickets.count)
+        descargarTicket()
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +43,7 @@ class TicketViewController: UIViewController, OnHttpResponse {
         print("Error al recibir los datos.")
     }
     
-    func decargarTicket(){
+    func descargarTicket(){
         guard let miTicket = ClienteHttp(target: "ticket", authorization: "Bearer " + token, responseObject: self) else {
             return
         }

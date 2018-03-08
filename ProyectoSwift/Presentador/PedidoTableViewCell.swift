@@ -12,6 +12,7 @@ class PedidoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var precio: UILabel!
+    @IBOutlet weak var imagen: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,7 +17,9 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     var token = ""
     var productosSeleccionados = [ProductPedidos]()
     
+    
     @IBOutlet weak var pedidotv: UITableView!
+    
     @IBOutlet weak var precioTotal: UILabel!
     
     override func viewDidLoad() {
@@ -25,18 +27,22 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         
         navigationItem.leftBarButtonItem = editButtonItem
         
-        pedidos += [
-            Pedido(nombre: "Pan blanco", precio: 0.80),
-            Pedido(nombre: "Barra integral", precio: 1.00),
-            Pedido(nombre: "Napolitana", precio: 0.85),
-            Pedido(nombre: "Tarta de queso", precio: 3.10)
-        ]
+        //productosSeleccionados = [ProductPedidos]()
+        print("Mis productos ->", productosSeleccionados.count)
+        
+        /*pedidos += [
+         Pedido(nombre: "Pan blanco", precio: 0.80),
+         Pedido(nombre: "Barra integral", precio: 1.00),
+         Pedido(nombre: "Napolitana", precio: 0.85),
+         Pedido(nombre: "Tarta de queso", precio: 3.10)
+         ]*/
         
         //var resultado = 0.0
-        for pedido in self.pedidos {
-            resultado += pedido.precio
+        for prod in self.productosSeleccionados {
+            resultado += Double(prod.precio)!
+            print("Resultado ->", resultado)
         }
-        self.precioTotal.text = "\(resultado) €"
+        self.precioTotal?.text = String(resultado)
         
     }
     
@@ -54,7 +60,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pedidos.count
+        return productosSeleccionados.count
     }
     
     
@@ -67,23 +73,18 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         //let cell:pedidoTableViewCell = pedidoTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-        
-        cell.nombre?.text = pedidos[indexPath.row].nombre
-        cell.precio?.text = "\(pedidos[indexPath.row].precio) €"
+        let url = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
+        let urlCompleta = url + productosSeleccionados[indexPath.row].imagen
+        cell.imagen.downloadedFrom(link: urlCompleta)
+        cell.nombre?.text = productosSeleccionados[indexPath.row].producto
+        cell.precio?.text = "\(productosSeleccionados[indexPath.row].precio) €"
         //cell.nombre?.text = "Hola"
         //cell.precio?.text = "Precio"
         
         return cell
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.destination is TicketViewController{
-            let vc = segue.destination as? TicketViewController
-            vc?.token = self.token
-        }
-        
-    }
+    
     
     var label : UILabel!
     var stepper : UIStepper!
@@ -95,7 +96,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         alerta.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { (action: UIAlertAction!) in
             
             var precio = 0.0
-            precio = self.pedidos[indexPath.row].precio
+            precio = Double(self.productosSeleccionados[indexPath.row].precio)!
             
             self.resultado += precio * (Double(self.stepper.value))
             let preciototal = String(format: "%.2f" , (Double(self.resultado)))
@@ -152,40 +153,81 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func guardarTicket(_ sender: UIButton) {
         /*var totalproducto = [Pedido]()
-        
-        for pedido in self.pedidos {
-            
-            var nomb = pedido.nombre
-            var precios = pedido.precio
-            var canti = pedido.cantidad
-            //var produc = Pedido(nombre: "nombre", precio: 0.0)
-            //totalproducto.append(produc)
-            
-            //print(totalproducto)
-            print("Nombre:" + nomb)
-            print("Precio:" + "\(precios)")
-            print("Cantidad:" + "\(canti)")
-        }
-        
-        //self.precioTotal.text = "\(resultado) €"*/
+         
+         for pedido in self.pedidos {
+         
+         var nomb = pedido.nombre
+         var precios = pedido.precio
+         var canti = pedido.cantidad
+         //var produc = Pedido(nombre: "nombre", precio: 0.0)
+         //totalproducto.append(produc)
+         
+         //print(totalproducto)
+         print("Nombre:" + nomb)
+         print("Precio:" + "\(precios)")
+         print("Cantidad:" + "\(canti)")
+         }
+         
+         //self.precioTotal.text = "\(resultado) €"*/
         
         
         //Probando con datos fijos a la espera de lo de Javi
-        let idticket = 1
-        let idproduct = 1
-        let quantity = 1
-        let price = 1
-                
-        var datos = [String: Any]()
-        datos = ["id_ticket": idticket, "id_product": idproduct, "quantity": quantity, "price": price]
         
-        guard let insertarTicket = ClienteHttp.init(target: "setTicketDetail", authorization: "Basic YW5nZWw6YW5nZWw=", responseObject: self, "POST", datos) else {
-            return
+        let date = String(describing: Date())
+        print("La fecha -->", date)
+        let id_member = 1
+        
+        for prod in self.productosSeleccionados {
+        
+            var newticket = [String: Any]()
+            newticket = ["date": date, "id_member": id_member]
+            
+            guard let insertarTicket = ClienteHttp.init(target: "setTicket", authorization: "Bearer " + token, responseObject: self, "POST", newticket) else {
+                return
+            }
+            insertarTicket.request()
+            
+            
+            
+            var datos = [String: Any]()
+            datos = ["id_product": prod.id_producto, "quantity": 3, "price": prod.precio]
+            
+            guard let insertarTicketDetail = ClienteHttp.init(target: "setTicketDetail", authorization: "Bearer " + token, responseObject: self, "POST", datos) else {
+                return
+            }
+            insertarTicketDetail.request()
         }
-        insertarTicket.request()
-                
-            
-            
+        
+        
+        
+        
+        
+        print("Pulsado")
+        
+        /*let idticket = ""
+         
+         var datos = [String: Any]()
+         
+         for prod in self.productosSeleccionados {
+         print("Id de producto ->", prod.id_producto)
+         print("Precio ->", prod.precio)
+         datos = ["id_ticket": idticket, "id_product": prod.id_producto, "quantity": 1, "price": prod.precio]
+         guard let insertarTicket = ClienteHttp.init(target: "setTicketDetail", authorization: "Basic YW5nZWw6YW5nZWw=", responseObject: self, "POST", datos) else {
+         return
+         }
+         insertarTicket.request()
+         print("Y uno")
+         
+         }*/
+        
+        /*func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.destination is TicketViewController{
+                let tvc = segue.destination as? TicketViewController
+                tvc?.token = self.token
+                print("Mandando token -> ", tvc?.token)
+            }
+        }*/
+        
     }
     
 }

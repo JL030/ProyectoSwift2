@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJs-ZK-cC2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447.19999999999999" y="-349.47526236881561"/>
+            <point key="canvasLocation" x="-302" y="-274"/>
         </scene>
         <!--View Controller Main-->
         <scene sceneID="EvJ-Sk-5Rs">
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYx-aS-UIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373.5999999999999" y="-349.47526236881561"/>
+            <point key="canvasLocation" x="1444" y="-349"/>
         </scene>
         <!--Registro View Controller-->
         <scene sceneID="Ytq-Cx-Lf8">
@@ -281,7 +281,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2r-R6-W2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jyc-jM-UDK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-47" y="477"/>
+            <point key="canvasLocation" x="-969" y="473"/>
         </scene>
         <!--View Controller Principal-->
         <scene sceneID="4CT-IE-Zq7">
@@ -379,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXt-e0-cov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="478"/>
+            <point key="canvasLocation" x="1374" y="476"/>
         </scene>
         <!--Collection View Controller Productos-->
         <scene sceneID="1Qq-oT-Kw3">
@@ -526,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7N-6T-ycO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2792.8000000000002" y="499.70014992503752"/>
+            <point key="canvasLocation" x="2721" y="390"/>
         </scene>
         <!--View Controller Descripcion-->
         <scene sceneID="YKV-Mt-aal">
@@ -626,6 +626,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imagen" destination="Uno-a8-NTh" id="3SL-pV-rVI"/>
                                             <outlet property="nombre" destination="jXA-Je-jpb" id="97G-bE-Z8n"/>
                                             <outlet property="precio" destination="H6S-lk-VCF" id="bKy-ub-ke9"/>
                                         </connections>
@@ -657,19 +658,29 @@
                                             <segue destination="ckv-SO-euM" kind="show" identifier="segueATicketView" id="Ta6-K6-e9W"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrw-P5-OBA">
+                                        <rect key="frame" x="292" y="16" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZbV-2Q-FYn" firstAttribute="leading" secondItem="6lL-5E-uSz" secondAttribute="trailing" constant="65" id="30g-6T-uwF"/>
                                     <constraint firstAttribute="bottom" secondItem="ZbV-2Q-FYn" secondAttribute="bottom" constant="21" id="3gR-PD-4IU"/>
                                     <constraint firstItem="ZbV-2Q-FYn" firstAttribute="leading" secondItem="6lL-5E-uSz" secondAttribute="trailing" constant="65" id="IKU-3Z-ApS"/>
+                                    <constraint firstItem="lrw-P5-OBA" firstAttribute="top" secondItem="DU6-Ta-hFt" secondAttribute="top" constant="16" id="KoO-6T-CPe"/>
+                                    <constraint firstItem="ZbV-2Q-FYn" firstAttribute="top" secondItem="lrw-P5-OBA" secondAttribute="bottom" constant="20" id="LEO-9q-Nsr"/>
                                     <constraint firstItem="tUn-sD-gmD" firstAttribute="leading" secondItem="DU6-Ta-hFt" secondAttribute="leading" constant="26" id="OcT-mI-dvZ"/>
                                     <constraint firstItem="tUn-sD-gmD" firstAttribute="top" secondItem="DU6-Ta-hFt" secondAttribute="top" constant="16" id="QoP-1E-l4Z"/>
                                     <constraint firstAttribute="trailing" secondItem="ZbV-2Q-FYn" secondAttribute="trailing" constant="33" id="RGx-wf-IkT"/>
                                     <constraint firstItem="6lL-5E-uSz" firstAttribute="top" secondItem="tUn-sD-gmD" secondAttribute="bottom" constant="20" id="Xj6-MZ-4Fl"/>
                                     <constraint firstItem="6lL-5E-uSz" firstAttribute="leading" secondItem="DU6-Ta-hFt" secondAttribute="leading" constant="33" id="emY-cN-7NN"/>
                                     <constraint firstAttribute="bottom" secondItem="6lL-5E-uSz" secondAttribute="bottom" constant="21" id="kYO-Bj-Ahm"/>
+                                    <constraint firstAttribute="trailing" secondItem="lrw-P5-OBA" secondAttribute="trailing" constant="30" id="q2y-cB-d9P"/>
                                     <constraint firstItem="6lL-5E-uSz" firstAttribute="top" secondItem="tUn-sD-gmD" secondAttribute="bottom" constant="20" id="uWG-Yb-bTK"/>
+                                    <constraint firstItem="lrw-P5-OBA" firstAttribute="leading" secondItem="tUn-sD-gmD" secondAttribute="trailing" constant="239.5" id="xnf-u2-cY7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -688,11 +699,12 @@
                     <navigationItem key="navigationItem" title="Cesta" id="roZ-bT-scT"/>
                     <connections>
                         <outlet property="pedidotv" destination="hVw-9t-XCz" id="Neu-fi-azO"/>
+                        <outlet property="precioTotal" destination="lrw-P5-OBA" id="6tR-mP-hmj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-bB-Uhe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="1270"/>
+            <point key="canvasLocation" x="697" y="1270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zva-Be-ox9">
@@ -743,7 +755,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKW-VW-5Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="476"/>
+            <point key="canvasLocation" x="188" y="477"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OMj-yI-MJK">
@@ -786,7 +798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVM-tL-Wo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="1270"/>
+            <point key="canvasLocation" x="2569" y="1279"/>
         </scene>
         <!--Ticket View Controller-->
         <scene sceneID="8z2-Db-i0l">
@@ -868,7 +880,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyB-n3-blV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="1270"/>
+            <point key="canvasLocation" x="1682" y="1279"/>
         </scene>
     </scenes>
     <resources>
@@ -880,7 +892,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="qye-Xd-jsd"/>
         <segue reference="qcl-eh-P41"/>
-        <segue reference="RK8-af-GcA"/>
-        <segue reference="Ojz-8T-ayQ"/>
+        <segue reference="szX-8L-Miu"/>
+        <segue reference="M6v-w7-lMr"/>
     </inferredMetricsTieBreakers>
 </document>
