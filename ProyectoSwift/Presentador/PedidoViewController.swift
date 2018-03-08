@@ -48,6 +48,14 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is TicketViewController{
+            let tvc = segue.destination as? TicketViewController
+            tvc?.token = token
+            //print("Mandando token -> ", tvc?.token)
+        }
+    }
+    
     func onDataReceived(data: Data) {
         
     }
@@ -224,13 +232,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
          
          }*/
         
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.destination is TicketViewController{
-                let tvc = segue.destination as? TicketViewController
-                tvc?.token = token
-                //print("Mandando token -> ", tvc?.token)
-            }
-        }
+        
         
     }
     
