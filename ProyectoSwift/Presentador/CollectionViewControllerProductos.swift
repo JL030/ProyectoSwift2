@@ -92,5 +92,6 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.imagenProducto.downloadedFrom(link: completo)
             vc?.labelDescripcion.text = productos[vc!.index].description
         }
+        
     }
 }

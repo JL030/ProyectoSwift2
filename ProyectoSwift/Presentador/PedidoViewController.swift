@@ -220,13 +220,13 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
          
          }*/
         
-        /*func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.destination is TicketViewController{
                 let tvc = segue.destination as? TicketViewController
                 tvc?.token = self.token
                 print("Mandando token -> ", tvc?.token)
             }
-        }*/
+        }
         
     }
     
