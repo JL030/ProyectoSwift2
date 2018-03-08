@@ -33,6 +33,7 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        print(idMain)
     }
     
     func onDataReceived(data: Data) {
@@ -85,8 +86,8 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             token?.categorias.append(contentsOf: self.categorias)
             token?.productos = self.productos
             ////nombre de usuario y id del mismo
-            token?.userPrin = self.userMain
-            token?.idPrin = self.idMain
+            token?.userPrin = userMain
+            token?.idPrin = idMain
             
         }
         

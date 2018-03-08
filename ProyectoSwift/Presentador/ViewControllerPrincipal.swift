@@ -69,7 +69,7 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
         }
         if segue.destination is CollectionViewControllerProductos{
             let vc = segue.destination as? CollectionViewControllerProductos
-            vc?.token = self.token
+            vc?.token = token
             vc?.productos.append(contentsOf: self.productos)
             vc?.idCategoria = idCat
             print("ID CAT YEEH -> ", idCat )

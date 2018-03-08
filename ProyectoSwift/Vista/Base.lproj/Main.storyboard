@@ -654,8 +654,7 @@
                                         <rect key="frame" x="233" y="57" width="112" height="30"/>
                                         <state key="normal" title="Terminar pedido"/>
                                         <connections>
-                                            <action selector="guardarTicket:" destination="fcN-rb-GZF" eventType="touchUpInside" id="QiX-ZT-BPi"/>
-                                            <segue destination="ckv-SO-euM" kind="show" identifier="segueATicketView" id="Ta6-K6-e9W"/>
+                                            <action selector="guardarTicket:" destination="fcN-rb-GZF" eventType="touchUpInside" id="9TP-oz-hq0"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrw-P5-OBA">
@@ -700,6 +699,7 @@
                     <connections>
                         <outlet property="pedidotv" destination="hVw-9t-XCz" id="Neu-fi-azO"/>
                         <outlet property="precioTotal" destination="lrw-P5-OBA" id="6tR-mP-hmj"/>
+                        <segue destination="ckv-SO-euM" kind="show" identifier="sendTicket" id="vaX-z0-5Vi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgR-bB-Uhe" sceneMemberID="firstResponder"/>

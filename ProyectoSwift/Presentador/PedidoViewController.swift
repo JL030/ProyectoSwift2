@@ -26,6 +26,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DATOS PASADOS POR MUA\(userPe, idPe)")
+        print("TOKEN\(token)")
         navigationItem.leftBarButtonItem = editButtonItem
         
         //productosSeleccionados = [ProductPedidos]()
@@ -197,6 +198,8 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
                 return
             }
             insertarTicketDetail.request()
+            
+            performSegue(withIdentifier: "sendTicket", sender: self)
         }
         
         
@@ -224,8 +227,8 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.destination is TicketViewController{
                 let tvc = segue.destination as? TicketViewController
-                tvc?.token = self.token
-                print("Mandando token -> ", tvc?.token)
+                tvc?.token = token
+                //print("Mandando token -> ", tvc?.token)
             }
         }
         

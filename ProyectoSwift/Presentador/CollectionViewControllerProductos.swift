@@ -82,7 +82,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
         
         if segue.destination is PedidoViewController{
             let vc = segue.destination as? PedidoViewController
-            vc?.token = self.token
+            vc?.token = token
             vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
             print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
             
