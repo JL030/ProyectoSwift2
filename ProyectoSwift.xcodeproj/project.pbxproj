@@ -12,6 +12,7 @@
 		0B6B7C8E204AE012006CF2A1 /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */; };
 		0B8BC8A7204823CE00B168BF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A6204823CE00B168BF /* Login.swift */; };
 		0B8BC8AA2048254400B168BF /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BC8A92048254400B168BF /* Family.swift */; };
+		0BA7473A2050DBA600BE2ABB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA747392050DBA600BE2ABB /* User.swift */; };
 		7377F2E7204D34BD00B2689D /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377F2E6204D34BD00B2689D /* Pedido.swift */; };
 		7377F2E9204D363600B2689D /* PedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377F2E8204D363600B2689D /* PedidoViewController.swift */; };
 		7377F2EB204D369A00B2689D /* PedidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377F2EA204D369A00B2689D /* PedidoTableViewCell.swift */; };
@@ -63,6 +64,7 @@
 		0B6B7C8D204AE012006CF2A1 /* ViewControllerMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMain.swift; sourceTree = "<group>"; };
 		0B8BC8A6204823CE00B168BF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0B8BC8A92048254400B168BF /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		0BA747392050DBA600BE2ABB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7377F2E6204D34BD00B2689D /* Pedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
 		7377F2E8204D363600B2689D /* PedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoViewController.swift; sourceTree = "<group>"; };
 		7377F2EA204D369A00B2689D /* PedidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				0B1E750B204C6EA000D9391B /* Registro.swift */,
 				7377F2E6204D34BD00B2689D /* Pedido.swift */,
 				9A2B158E20506F6E005B5C15 /* ProductosPedidos.swift */,
+				0BA747392050DBA600BE2ABB /* User.swift */,
 			);
 			path = Poso;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA7473A2050DBA600BE2ABB /* User.swift in Sources */,
 				9A2B50662049BA7F0078481E /* Cache.swift in Sources */,
 				9A34F9C9204A072900513D00 /* CustomCollectionViewCell.swift in Sources */,
 				9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */,
