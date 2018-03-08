@@ -17,6 +17,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     // AÑADIDO POR JAVI
     var token = ""
     var productosSeleccionados = [ProductPedidos]()
+    var productos = [Product]()
     
     
     @IBOutlet weak var pedidotv: UITableView!
@@ -53,6 +54,10 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             let tvc = segue.destination as? TicketViewController
             tvc?.token = token
             //print("Mandando token -> ", tvc?.token)
+        }
+        if segue.destination is CollectionViewControllerProductos{
+            let vc = segue.destination as? CollectionViewControllerProductos
+            vc!.productos.append(contentsOf: self.productos)
         }
     }
     

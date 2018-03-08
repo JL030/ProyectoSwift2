@@ -85,7 +85,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.token = token
             vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
             print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
-            
+            vc!.productos.append(contentsOf: self.productos)
             //
             vc?.userPe = userPro
             vc?.idPe = idPro
