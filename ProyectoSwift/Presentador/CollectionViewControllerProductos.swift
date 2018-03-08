@@ -12,6 +12,8 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
 
     var idCategoria : String = ""
     var token = ""
+    var userPro = ""
+    var idPro = ""
     var productos = [Product]()
     var productosFiltrados = [Product]()
     var productosSeleccionados = [ProductPedidos]()
@@ -83,6 +85,10 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.token = self.token
             vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
             print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
+            
+            //
+            vc?.userPe = userPro
+            vc?.idPe = idPro
         }
         if segue.destination is ViewControllerDescripcion{
             let vc = segue.destination as? ViewControllerDescripcion

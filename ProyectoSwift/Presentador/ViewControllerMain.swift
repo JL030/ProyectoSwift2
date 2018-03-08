@@ -13,6 +13,8 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
     var productos = [Product]()
     var imagenes : [UIImage] = []
     var tokenMain = ""
+    var userMain = ""
+    var idMain = ""
     @IBOutlet weak var labelprueba: UILabel!
     var usuario = ""
     
@@ -82,6 +84,10 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             token?.imagenes = self.imagenes
             token?.categorias.append(contentsOf: self.categorias)
             token?.productos = self.productos
+            ////nombre de usuario y id del mismo
+            token?.userPrin = self.userMain
+            token?.idPrin = self.idMain
+            
         }
         
         if segue.destination is ViewController {

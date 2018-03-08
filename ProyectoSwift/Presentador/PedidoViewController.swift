@@ -12,7 +12,8 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     
     var pedidos = [Pedido]()
     var resultado = 0.0
-    var user = ""
+    var userPe = ""
+    var idPe = ""
     // AÑADIDO POR JAVI
     var token = ""
     var productosSeleccionados = [ProductPedidos]()
@@ -24,7 +25,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("DATOS PASADOS POR MUA\(userPe, idPe)")
         navigationItem.leftBarButtonItem = editButtonItem
         
         //productosSeleccionados = [ProductPedidos]()

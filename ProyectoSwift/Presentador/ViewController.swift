@@ -15,6 +15,7 @@ class ViewController: UIViewController, OnHttpResponse {
     @IBOutlet weak var passText: UITextField!
     var tokenReal = ""
     var usuario = ""
+    var idmember = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +66,9 @@ class ViewController: UIViewController, OnHttpResponse {
             
             let vc = segue.destination as? ViewControllerMain
             vc?.tokenMain = tokenReal
-            
-            let pv = segue.destination as? PedidoViewController
-            pv?.user = usuario
+            //nombre de usuario y id del mismo
+            vc?.userMain = usuario
+            vc?.idMain = idmember
             
         }
     }
@@ -116,6 +117,8 @@ class ViewController: UIViewController, OnHttpResponse {
                 if id.login == usuario {
                     print("ha entrado en el if y son iguales")
                     print("Usuario logueado:\(id.id, id.login, id.password)")
+                    idmember = id.id
+                    print(idmember)
                 }
             }
             

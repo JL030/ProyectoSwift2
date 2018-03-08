@@ -31,6 +31,8 @@ extension UIImageView {
 class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var token = ""
+    var userPrin = ""
+    var idPrin = ""
     var categorias = [Family]()
     var imagenes : [UIImage] = []
     var productos = [Product]()
@@ -71,6 +73,10 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
             vc?.productos.append(contentsOf: self.productos)
             vc?.idCategoria = idCat
             print("ID CAT YEEH -> ", idCat )
+            
+            //nombre de usuario y id del mismo
+            vc?.userPro = userPrin
+            vc?.idPro = idPrin
         }
     }
     
