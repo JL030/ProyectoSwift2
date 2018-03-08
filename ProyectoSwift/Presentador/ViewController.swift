@@ -75,8 +75,7 @@ class ViewController: UIViewController, OnHttpResponse {
     
     func onDataReceived(data: Data) {
         
-        /*let resultado = RestJsonUtil.jsonToDict(data: data)
-        print(resultado?.description["categories"] as? String)*/
+        let dictUser = RestJsonUtil.jsonToDict(data: data)
         
         //let login = Login.init(token: (resultado?.values as? String)!)
         
@@ -91,7 +90,7 @@ class ViewController: UIViewController, OnHttpResponse {
                 
                 performSegue(withIdentifier: "login", sender: self)
                 //performSegue(withIdentifier: "seguePrincipal", sender: self)
-
+                
                 
             }
             
@@ -105,6 +104,24 @@ class ViewController: UIViewController, OnHttpResponse {
             alerta.addAction(continueAction)
             
             self.present(alerta, animated: true, completion: nil)
+        }
+        
+        do {
+            
+            var users = try JSONDecoder().decode([User].self, from: try! JSONSerialization.data(withJSONObject: dictUser!["member"]))
+            print("ESTO es usuarios")
+            print(users[0].login)
+            
+            for id in users {
+                if id.login == usuario {
+                    print("ha entrado en el if y son iguales")
+                    print("Usuario logueado:\(id.id, id.login, id.password)")
+                }
+            }
+            
+            
+        }catch {
+            print("error de usuario")
         }
 
         
