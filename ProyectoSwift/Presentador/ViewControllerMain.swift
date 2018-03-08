@@ -22,8 +22,8 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
         super.viewDidLoad()
         print("TOKEN 1")
         print(tokenMain)
-        //labelprueba.text = usuario
-        
+        //labelprueba.text = usua
+        print("ID del usuario ->\(idMain)")
         // Categorias
         descargarCategorias()
         download()
