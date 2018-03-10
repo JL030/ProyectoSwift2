@@ -86,7 +86,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
             print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
             vc!.productos.append(contentsOf: self.productos)
-            //
+            vc!.productos.append(contentsOf: self.productos)
             vc?.userPe = userPro
             vc?.idPe = idPro
         }

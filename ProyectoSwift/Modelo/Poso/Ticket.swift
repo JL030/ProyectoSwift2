@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Ticket : Codable{
+struct Ticket {
     var id : String
-    var date : String
+    //var date : String
     var id_member : String
-    //var id_client : String
 }
