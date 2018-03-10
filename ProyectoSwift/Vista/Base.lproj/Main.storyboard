@@ -100,7 +100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="goq-h4-DJa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="goq-h4-DJa">
                                 <rect key="frame" x="27" y="30" width="360" height="361"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAD-cA-hLF">
@@ -178,7 +178,7 @@
                                 <rect key="frame" x="37" y="308" width="340" height="390"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registarse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4I-JY-TBH">
-                                <rect key="frame" x="109" y="326.66666666666669" width="195" height="52"/>
+                                <rect key="frame" x="109" y="327" width="195" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="JKX-Pw-54v"/>
                                 </constraints>
@@ -218,12 +218,8 @@
                                     <action selector="sendRegister:" destination="XSM-sP-eTS" eventType="touchUpInside" id="sH7-co-NZF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2oh-MV-qtf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="2oh-MV-qtf">
                                 <rect key="frame" x="62" y="12" width="289" height="288"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-5k-cNd">
-                                <rect key="frame" x="47" y="415" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWs-qg-48Q">
                                 <rect key="frame" x="147" y="653" width="106" height="19"/>
@@ -232,19 +228,28 @@
                                     <segue destination="JgB-Zm-evm" kind="show" id="Ojz-8T-ayQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-4J-5rb">
-                                <rect key="frame" x="47" y="471" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-4J-5rb">
+                                <rect key="frame" x="47" y="540" width="20" height="20"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-5k-cNd">
+                                <rect key="frame" x="47" y="484" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="wzD-PC-kNE"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CDq-9L-eM3" firstAttribute="top" secondItem="yRX-8b-JfF" secondAttribute="bottom" constant="23" id="0UQ-Sc-qWo"/>
                             <constraint firstItem="TV6-vE-SDM" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="75" id="1Oi-cg-xyR"/>
+                            <constraint firstItem="Cw7-4J-5rb" firstAttribute="top" secondItem="qZw-5k-cNd" secondAttribute="bottom" constant="36" id="1aF-ju-Wvf"/>
+                            <constraint firstItem="qZw-5k-cNd" firstAttribute="leading" secondItem="Cw7-4J-5rb" secondAttribute="leading" id="2Zs-KK-xU2"/>
                             <constraint firstItem="2oh-MV-qtf" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="62" id="7AG-LZ-gna"/>
+                            <constraint firstItem="Cw7-4J-5rb" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="47" id="9Gb-IX-5S1"/>
                             <constraint firstItem="j4I-JY-TBH" firstAttribute="centerY" secondItem="ESS-7R-jNK" secondAttribute="centerY" constant="-15.5" id="A33-uS-3lq"/>
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="j4I-JY-TBH" secondAttribute="trailing" constant="110" id="CPZ-IJ-7HE"/>
                             <constraint firstItem="WTD-k1-mpZ" firstAttribute="top" secondItem="2oh-MV-qtf" secondAttribute="bottom" constant="8" id="ENs-Pr-MNb"/>
+                            <constraint firstItem="TV6-vE-SDM" firstAttribute="leading" secondItem="qZw-5k-cNd" secondAttribute="trailing" constant="8" symbolic="YES" id="ERc-Lq-k67"/>
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="TV6-vE-SDM" secondAttribute="trailing" constant="89" id="Fgi-GD-KkK"/>
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="gGR-fp-wft" secondAttribute="trailing" constant="89" id="FjG-eM-sVo"/>
                             <constraint firstItem="gGR-fp-wft" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="75" id="Fxp-Mh-yJp"/>
@@ -259,8 +264,11 @@
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="WTD-k1-mpZ" secondAttribute="trailing" constant="37" id="ayQ-WD-0DY"/>
                             <constraint firstItem="j4I-JY-TBH" firstAttribute="top" secondItem="2oh-MV-qtf" secondAttribute="bottom" constant="26.5" id="b4z-md-Pb8"/>
                             <constraint firstItem="j4I-JY-TBH" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="109" id="byU-A7-zsq"/>
+                            <constraint firstItem="yRX-8b-JfF" firstAttribute="leading" secondItem="Cw7-4J-5rb" secondAttribute="trailing" constant="8" id="eYs-E3-0Z7"/>
                             <constraint firstItem="fWs-qg-48Q" firstAttribute="top" secondItem="CDq-9L-eM3" secondAttribute="bottom" constant="17" id="jmg-XI-gFF"/>
                             <constraint firstItem="CDq-9L-eM3" firstAttribute="leading" secondItem="s4f-7z-VBY" secondAttribute="leading" constant="75" id="n6y-EJ-Mef"/>
+                            <constraint firstItem="s4f-7z-VBY" firstAttribute="bottom" secondItem="Cw7-4J-5rb" secondAttribute="bottom" constant="176" id="oSm-Z3-mUR"/>
+                            <constraint firstAttribute="bottom" secondItem="qZw-5k-cNd" secondAttribute="bottom" constant="232" id="pNB-iE-gR7"/>
                             <constraint firstItem="WTD-k1-mpZ" firstAttribute="top" secondItem="2oh-MV-qtf" secondAttribute="bottom" constant="8" id="pyb-vD-j6I"/>
                             <constraint firstItem="s4f-7z-VBY" firstAttribute="trailing" secondItem="yRX-8b-JfF" secondAttribute="trailing" constant="89" id="rca-Oa-GOu"/>
                             <constraint firstItem="TV6-vE-SDM" firstAttribute="top" secondItem="gGR-fp-wft" secondAttribute="bottom" constant="28" id="tyK-s2-gPM"/>
@@ -286,7 +294,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2r-R6-W2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jyc-jM-UDK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-969" y="473"/>
+            <point key="canvasLocation" x="-969.56521739130437" y="472.82608695652175"/>
         </scene>
         <!--View Controller Principal-->
         <scene sceneID="4CT-IE-Zq7">
@@ -906,13 +914,13 @@
     <resources>
         <image name="Image" width="320" height="240"/>
         <image name="chek" width="300" height="300"/>
-        <image name="logo" width="500" height="500"/>
+        <image name="logo-1" width="500" height="500"/>
         <image name="prueba2" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qye-Xd-jsd"/>
         <segue reference="mmD-n0-1R0"/>
-        <segue reference="qcl-eh-P41"/>
+        <segue reference="8iR-So-fh6"/>
         <segue reference="szX-8L-Miu"/>
         <segue reference="M6v-w7-lMr"/>
     </inferredMetricsTieBreakers>
