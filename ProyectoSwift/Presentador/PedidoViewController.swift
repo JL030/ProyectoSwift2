@@ -11,6 +11,7 @@ import UIKit
 class PedidoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OnHttpResponse {
     
     var pedidos = [Pedido]()
+    var tickets = [Ticket]()
     var resultado = 0.0
     var userPe = ""
     var idPe = ""
@@ -29,7 +30,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         print("DATOS PASADOS POR MUA\(userPe, idPe)")
         print("TOKEN\(token)")
         navigationItem.leftBarButtonItem = editButtonItem
-        
+        descargarTicket()
         //productosSeleccionados = [ProductPedidos]()
         print("Mis productos ->", productosSeleccionados.count)
         
@@ -49,25 +50,49 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    
+    func onDataReceived(data: Data) {
+        let respuesta = RestJsonUtil.jsonToDict(data : data)
+        //print("Respuesta --->", respuesta!)
+        
+        do{
+            tickets = try JSONDecoder().decode([Ticket].self, from: try! JSONSerialization.data(withJSONObject: respuesta!["ticket"]))
+        }
+        catch {
+            print("Error al recibir los datos.")
+        }
+        print("Ticket en pedidoview", tickets.count)
+        print("asdasd en pedido view", tickets[0].id)
+    }
+    
+    func onErrorReceivingData(message: String){
+        print("Error al recibir los datos.")
+    }
+    
+    func descargarTicket(){
+        guard let miTicket = ClienteHttp(target: "ticket", authorization: "Bearer " + self.token, responseObject: self) else {
+            return
+        }
+        miTicket.request()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TicketViewController{
             let tvc = segue.destination as? TicketViewController
             tvc?.token = token
+            tvc?.tickets.append(contentsOf: self.tickets)
+            print("Los tickets que mando por segue ->", tickets.count)
+            //print("Id ticket mandado por segue", tickets[0].id)
+            
             //print("Mandando token -> ", tvc?.token)
         }
         if segue.destination is CollectionViewControllerProductos{
             let vc = segue.destination as? CollectionViewControllerProductos
             vc!.productos.append(contentsOf: self.productos)
+            vc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
         }
     }
     
-    func onDataReceived(data: Data) {
-        
-    }
-    
-    func onErrorReceivingData(message: String) {
-        
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -166,6 +191,9 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    
+    
+    
     @IBAction func guardarTicket(_ sender: UIButton) {
         /*var totalproducto = [Pedido]()
          
@@ -190,12 +218,13 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         
         let date = String(describing: Date())
         print("La fecha -->", date)
-        let id_member = 1
+        let id_member = "1"
+        let id_client = "2"
         
         for prod in self.productosSeleccionados {
-        
+            
             var newticket = [String: Any]()
-            newticket = ["date": date, "id_member": id_member]
+            newticket = ["date": date, "id_member": id_member, "id_client": id_client]
             
             guard let insertarTicket = ClienteHttp.init(target: "setTicket", authorization: "Bearer " + token, responseObject: self, "POST", newticket) else {
                 return
@@ -242,3 +271,4 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 }
+

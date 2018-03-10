@@ -8,45 +8,55 @@
 
 import UIKit
 
-class TicketViewController: UIViewController, OnHttpResponse, UITableViewDataSource, UITableViewDelegate {
+class TicketViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OnHttpResponse {
     
     var tickets = [Ticket]()
     var token = ""
-    var productos = [Product]()
+    
+    @IBOutlet weak var miTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("token ", token)
-        print("Ticket ", tickets.count)
+        miTableView.dataSource = self
+        miTableView.delegate = self
         //descargarTicket()
-        //print("Ticket -> ", tickets[0].id, "---", tickets[0].date)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        print("token ", token)
+        
+        
+        /*tickets += [
+         Ticket(id: "1", date: "datemia", id_member: "1")
+         ]*/
         
     }
     
-    func onDataReceived(data: Data){
-        let respuesta = RestJsonUtil.jsonToDict(data : data)
-        
-        do{
-            tickets = try JSONDecoder().decode([Ticket].self, from: try! JSONSerialization.data(withJSONObject: respuesta!["ticket"]))
-            
-            print("TIKKET ID -> ", tickets[0].id)
-        }
-        catch {
-            print("Error al recibir los datos.")
-        }
-        
-        
+    func onDataReceived(data: Data) {
+        /*let respuesta = RestJsonUtil.jsonToDict(data : data)
+         print("Respuesta --->", respuesta!)
+         
+         do{
+         tickets = try JSONDecoder().decode([Ticket].self, from: try! JSONSerialization.data(withJSONObject: respuesta!["ticket"]))
+         }
+         catch {
+         print("Error al recibir los datos.")
+         }
+         print("Ticket ", tickets.count)
+         print("asdasd", tickets[0].id)*/
     }
     
     func onErrorReceivingData(message: String){
         print("Error al recibir los datos.")
     }
     
+    /*func itemsDownloaded() {
+     
+     //tickets = ticket
+     self.miTableView.reloadData()
+     }*/
+    
+    
     func descargarTicket(){
-        guard let miTicket = ClienteHttp(target: "getTicket", authorization: "Bearer " + token, responseObject: self) else {
+        guard let miTicket = ClienteHttp(target: "ticket", authorization: "Bearer " + self.token, responseObject: self) else {
             return
         }
         miTicket.request()
@@ -54,24 +64,23 @@ class TicketViewController: UIViewController, OnHttpResponse, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-        
+        return tickets.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "cellticket"
+        let cellIdentifier = "TicketTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TicketTableViewCell else {
-            fatalError("Error nena")
-        }
+        let cell = miTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? TicketTableViewCell
         
-        //let cell:pedidoTableViewCell = pedidoTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-        cell.idticketlabel.text = "Prueba"
-        cell.idmemberlabel.text = "yEEH"
-        //cell.dateticketlabel.text = tickets[indexPath.row].date
         
-        return cell
+        cell?.idTicket.text = tickets[indexPath.row].id
+        print("el id", tickets[indexPath.row].id)
+        //cell.date.text = tickets[indexPath.row].date
+        cell?.idMember.text = tickets[indexPath.row].id_member
+        
+        return cell!
         
     }
     

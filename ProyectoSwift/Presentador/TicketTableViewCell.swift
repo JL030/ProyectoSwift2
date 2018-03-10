@@ -10,10 +10,10 @@ import UIKit
 
 class TicketTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var idTicket: UILabel!
     
-    @IBOutlet weak var idticketlabel: UILabel!
-    @IBOutlet weak var dateticketlabel: UILabel!
-    @IBOutlet weak var idmemberlabel: UILabel!
+    @IBOutlet weak var idMember: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
