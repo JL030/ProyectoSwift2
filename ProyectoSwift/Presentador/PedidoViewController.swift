@@ -58,6 +58,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.destination is CollectionViewControllerProductos{
             let vc = segue.destination as? CollectionViewControllerProductos
             vc!.productos.append(contentsOf: self.productos)
+            vc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
         }
     }
     
@@ -190,12 +191,13 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         
         let date = String(describing: Date())
         print("La fecha -->", date)
-        let id_member = 1
+        let id_member = "1"
+        let id_client = "2"
         
         for prod in self.productosSeleccionados {
         
             var newticket = [String: Any]()
-            newticket = ["date": date, "id_member": id_member]
+            newticket = ["date": date, "id_member": id_member, "id_client": id_client]
             
             guard let insertarTicket = ClienteHttp.init(target: "setTicket", authorization: "Bearer " + token, responseObject: self, "POST", newticket) else {
                 return

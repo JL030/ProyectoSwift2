@@ -13,12 +13,19 @@ class TicketViewController: UIViewController, OnHttpResponse {
     var tickets = [Ticket]()
     var token = ""
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tickets += [
+            Ticket(id: "El id", date: "La date", id_member: "el id member"),
+            Ticket(id: "El id", date: "La date", id_member: "el id member")
+        ]
+        
         print("token ", token)
         print("Ticket ", tickets.count)
-        descargarTicket()
+        //descargarTicket()
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,14 +34,14 @@ class TicketViewController: UIViewController, OnHttpResponse {
     }
     
     func onDataReceived(data: Data){
-        let respuesta = RestJsonUtil.jsonToDict(data : data)
+        /*let respuesta = RestJsonUtil.jsonToDict(data : data)
         
         do{
             tickets = try JSONDecoder().decode([Ticket].self, from: try! JSONSerialization.data(withJSONObject: respuesta!["ticket"]))
         }
         catch {
             print("Error al recibir los datos.")
-        }
+        }*/
         
         
     }
@@ -43,12 +50,12 @@ class TicketViewController: UIViewController, OnHttpResponse {
         print("Error al recibir los datos.")
     }
     
-    func descargarTicket(){
+    /*func descargarTicket(){
         guard let miTicket = ClienteHttp(target: "ticket", authorization: "Bearer " + token, responseObject: self) else {
             return
         }
         miTicket.request()
-    }
+    }*/
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
