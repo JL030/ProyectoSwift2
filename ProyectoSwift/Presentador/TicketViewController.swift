@@ -13,6 +13,8 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
     var tickets = [Ticket]()
     var productosSeleccionados = [ProductPedidos]()
     var token = ""
+    var fecha = ""
+    var idPe = ""
     
     @IBOutlet weak var miTableView: UITableView!
     
@@ -24,15 +26,21 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         
-        let date = String(describing: Date())
-        print("La fecha -->", date)
+        //let date = String(describing: Date())
+        //print("La fecha -->", date)
         let id_member = "1"
-        let id_client = "2"
+        let id_client = ""
         
         for prod in self.productosSeleccionados {
             
             var newticket = [String: Any]()
-            newticket = ["date": date, "id_member": id_member, "id_client": id_client]
+            newticket = ["date": fecha, "id_member": idPe, "id_client": id_client]
+            
+            //arrayticket = [Ticket]()
+            /*arrayticket += [
+             Ticket(id: "1", date: "datemia", id_member: "1")
+             ]*/
+            
             
             guard let insertarTicket = ClienteHttp.init(target: "setTicket", authorization: "Bearer " + token, responseObject: self, "POST", newticket) else {
                 return
@@ -110,7 +118,7 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell?.idTicket.text = tickets[indexPath.row].id
         print("el id", tickets[indexPath.row].id)
-        //cell.date.text = tickets[indexPath.row].date
+        cell?.fecha.text = tickets[indexPath.row].date
         cell?.idMember.text = tickets[indexPath.row].id_member
         
         return cell!

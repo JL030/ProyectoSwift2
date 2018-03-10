@@ -10,6 +10,6 @@ import Foundation
 
 struct Ticket : Codable{
     var id : String
-    //var date : String
+    var date : String
     var id_member : String
 }

@@ -14,6 +14,7 @@ class TicketTableViewCell: UITableViewCell {
     
     @IBOutlet weak var idMember: UILabel!
     
+    @IBOutlet weak var fecha: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,6 +20,10 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     var productosSeleccionados = [ProductPedidos]()
     var productos = [Product]()
     
+    //Campos para ticket
+    var fecha = String(describing: Date())
+    //idPe
+    
     
     @IBOutlet weak var pedidotv: UITableView!
     
@@ -62,7 +66,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             print("Error al recibir los datos.")
         }
         print("Ticket en pedidoview", tickets.count)
-        print("asdasd en pedido view", tickets[0].id)
+        //print("asdasd en pedido view", tickets[0].id)
     }
     
     func onErrorReceivingData(message: String){
@@ -82,7 +86,11 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             tvc?.token = token
             tvc?.tickets.append(contentsOf: self.tickets)
             tvc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
+            tvc!.fecha = fecha
+            tvc!.idPe = idPe
             print("Los tickets que mando por segue ->", tickets.count)
+            print("Fecha que paso ->", fecha)
+            print("id que paso ->", idPe)
             //print("Id ticket mandado por segue", tickets[0].id)
             
             //print("Mandando token -> ", tvc?.token)
