@@ -52,6 +52,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         }
         self.precioTotal?.text = String(resultado)
         
+        
     }
     
     

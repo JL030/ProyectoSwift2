@@ -28,7 +28,7 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         
         //let date = String(describing: Date())
         //print("La fecha -->", date)
-        let id_member = "1"
+        let id_member = "2"
         let id_client = ""
         
         for prod in self.productosSeleccionados {

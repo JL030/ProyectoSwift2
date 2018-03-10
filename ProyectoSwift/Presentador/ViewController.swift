@@ -89,11 +89,25 @@ class ViewController: UIViewController, OnHttpResponse {
                 
                 tokenReal = prueba.token
                 
-                performSegue(withIdentifier: "login", sender: self)
+                //performSegue(withIdentifier: "login", sender: self)
                 //performSegue(withIdentifier: "seguePrincipal", sender: self)
+                
+                var users = try JSONDecoder().decode([User].self, from: try! JSONSerialization.data(withJSONObject: dictUser!["member"]))
+                print("ESTO es usuarios")
+                print(users[0].login)
+                
+                for id in users {
+                    if id.login == usuario {
+                        print("ha entrado en el if y son iguales")
+                        print("Usuario logueado:\(id.id, id.login, id.password)")
+                        idmember = id.id
+                        print(idmember)
+                    }
+                }
                 
                 
             }
+            performSegue(withIdentifier: "login", sender: self)
             
         }catch{
             print("Error")
@@ -107,7 +121,7 @@ class ViewController: UIViewController, OnHttpResponse {
             self.present(alerta, animated: true, completion: nil)
         }
         
-        do {
+        /*do {
             
             var users = try JSONDecoder().decode([User].self, from: try! JSONSerialization.data(withJSONObject: dictUser!["member"]))
             print("ESTO es usuarios")
@@ -125,7 +139,7 @@ class ViewController: UIViewController, OnHttpResponse {
             
         }catch {
             print("error de usuario")
-        }
+        }*/
 
         
     }
