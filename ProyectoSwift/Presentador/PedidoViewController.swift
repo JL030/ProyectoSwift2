@@ -81,6 +81,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             let tvc = segue.destination as? TicketViewController
             tvc?.token = token
             tvc?.tickets.append(contentsOf: self.tickets)
+            tvc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
             print("Los tickets que mando por segue ->", tickets.count)
             //print("Id ticket mandado por segue", tickets[0].id)
             
@@ -216,7 +217,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         
         //Probando con datos fijos a la espera de lo de Javi
         
-        let date = String(describing: Date())
+        /*let date = String(describing: Date())
         print("La fecha -->", date)
         let id_member = "1"
         let id_client = "2"
@@ -241,14 +242,15 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             }
             insertarTicketDetail.request()
             
-            performSegue(withIdentifier: "sendTicket", sender: self)
-        }
+        
+        }*/
+        performSegue(withIdentifier: "sendTicket", sender: self)
         
         
         
         
         
-        print("Pulsado")
+        //print("Pulsado")
         
         /*let idticket = ""
          

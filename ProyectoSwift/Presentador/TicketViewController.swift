@@ -11,6 +11,7 @@ import UIKit
 class TicketViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OnHttpResponse {
     
     var tickets = [Ticket]()
+    var productosSeleccionados = [ProductPedidos]()
     var token = ""
     
     @IBOutlet weak var miTableView: UITableView!
@@ -20,7 +21,39 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         miTableView.dataSource = self
         miTableView.delegate = self
-        //descargarTicket()
+        
+        
+        
+        let date = String(describing: Date())
+        print("La fecha -->", date)
+        let id_member = "1"
+        let id_client = "2"
+        
+        for prod in self.productosSeleccionados {
+            
+            var newticket = [String: Any]()
+            newticket = ["date": date, "id_member": id_member, "id_client": id_client]
+            
+            guard let insertarTicket = ClienteHttp.init(target: "setTicket", authorization: "Bearer " + token, responseObject: self, "POST", newticket) else {
+                return
+            }
+            insertarTicket.request()
+            
+            
+            
+            var datos = [String: Any]()
+            datos = ["id_product": prod.id_producto, "quantity": 3, "price": prod.precio]
+            
+            guard let insertarTicketDetail = ClienteHttp.init(target: "setTicketDetail", authorization: "Bearer " + token, responseObject: self, "POST", datos) else {
+                return
+            }
+            insertarTicketDetail.request()
+            
+            
+        }
+        
+        
+        descargarTicket()
         print("token ", token)
         
         
