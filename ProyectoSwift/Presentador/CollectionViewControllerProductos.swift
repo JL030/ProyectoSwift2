@@ -18,6 +18,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
     var productosFiltrados = [Product]()
     var productosSeleccionados = [ProductPedidos]()
     var indexPath : IndexPath = []
+    var categorias = [Family]()
 
     @IBOutlet weak var totalPrecio: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -62,23 +63,21 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
         if cell.añadir.isSelected{
             desVC.index = indexPath.row
         }
-        /*if productosSeleccionados.con{
-                var cantidad = 1
-                let productoNuevo = ProductPedidos.init(id_producto: productos[indexPath.row].id, cantidad: cantidad)
-                productosSeleccionados.append(productoNuevo)
-                print("Nuevo producto añadido: ", productosSeleccionados.count)
-            }else{
-                var cantidad = productosSeleccionados[indexPath.row].cantidad
-                let cantidadNueva = cantidad + 1
-                productosSeleccionados[indexPath.row].cantidad = cantidadNueva
-                print("1 MAS")
-            }*/
         totalPrecio.text = String(productosSeleccionados.count)
         print("Cambiado")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.destination is ViewControllerPrincipal{
+            let vc = segue.destination as? ViewControllerPrincipal
+            vc!.categorias.append(contentsOf: self.categorias)
+            vc!.token = self.token
+            vc!.idPrin = self.idPro
+            vc!.userPrin = self.userPro
+        }
+        
+        // PEDIDO VIEW CONTROLLER
         if segue.destination is PedidoViewController{
             let vc = segue.destination as? PedidoViewController
             vc?.token = token
@@ -89,6 +88,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.userPe = userPro
             vc?.idPe = idPro
         }
+        // DESCRIPCIÓN PRODUCTO
         if segue.destination is ViewControllerDescripcion{
             let vc = segue.destination as? ViewControllerDescripcion
             vc?.labelProducto.text = productos[vc!.index].product

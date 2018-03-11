@@ -71,6 +71,7 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
             let item = sender as? UICollectionViewCell
             let indexPath = collectionView.indexPath(for: item!)
             let vc = segue.destination as? CollectionViewControllerProductos
+            vc!.categorias.append(contentsOf: self.categorias)
             vc?.token = token
             vc?.productos.append(contentsOf: self.productos)
             vc!.idCategoria = String(describing: indexPath!.row + 1)
