@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JgB-Zm-evm">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -253,10 +253,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="2oh-MV-qtf">
                                 <rect key="frame" x="62" y="12" width="289" height="288"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-5k-cNd">
-                                <rect key="frame" x="47" y="415" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWs-qg-48Q">
                                 <rect key="frame" x="147" y="653" width="106" height="19"/>
                                 <state key="normal" title="Cancelar"/>
@@ -265,7 +261,11 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="Cw7-4J-5rb">
-                                <rect key="frame" x="47" y="471" width="20" height="20"/>
+                                <rect key="frame" x="47" y="540" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chek" translatesAutoresizingMaskIntoConstraints="NO" id="qZw-5k-cNd">
+                                <rect key="frame" x="47" y="484" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -313,6 +313,7 @@
                         <outlet property="regPass" destination="TV6-vE-SDM" id="lsh-T5-JY5"/>
                         <outlet property="regPassConfirmed" destination="yRX-8b-JfF" id="Zrg-45-IrI"/>
                         <outlet property="regUser" destination="gGR-fp-wft" id="oW7-Lc-gnb"/>
+                        <segue destination="JgB-Zm-evm" kind="show" identifier="registrado" id="Jnr-gh-wVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2r-R6-W2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -445,7 +446,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4j-Up-U0H">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Productos" id="dZu-gp-7sN">
@@ -463,7 +464,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantidad de productos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHe-Dy-two">
-                                <rect key="frame" x="0.0" y="671" width="292" height="65"/>
+                                <rect key="frame" x="0.0" y="671" width="253" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="Rh6-it-Ohn"/>
                                     <constraint firstAttribute="width" constant="253" id="jbb-JE-VIN"/>
@@ -473,7 +474,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tex-z5-RTK">
-                                <rect key="frame" x="251" y="671" width="163" height="66"/>
+                                <rect key="frame" x="251" y="671" width="124" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="PRQ-8W-iUR"/>
                                     <constraint firstAttribute="width" constant="124" id="tTY-UK-erO"/>
@@ -483,7 +484,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sR4-OG-rae">
-                                <rect key="frame" x="-4" y="44" width="414" height="627"/>
+                                <rect key="frame" x="-4" y="44" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hZw-L2-YAe">
                                     <size key="itemSize" width="150" height="200"/>
@@ -1086,6 +1087,6 @@
         <segue reference="mmD-n0-1R0"/>
         <segue reference="8iR-So-fh6"/>
         <segue reference="RK8-af-GcA"/>
-        <segue reference="M6v-w7-lMr"/>
+        <segue reference="Jnr-gh-wVR"/>
     </inferredMetricsTieBreakers>
 </document>
