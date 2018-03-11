@@ -68,10 +68,12 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
             vc?.tokenMain = token
         }
         if segue.destination is CollectionViewControllerProductos{
+            let item = sender as? UICollectionViewCell
+            let indexPath = collectionView.indexPath(for: item!)
             let vc = segue.destination as? CollectionViewControllerProductos
             vc?.token = token
             vc?.productos.append(contentsOf: self.productos)
-            vc?.idCategoria = idCat
+            vc!.idCategoria = String(describing: indexPath!.row + 1)
             print("ID CAT YEEH -> ", idCat )
             
             //nombre de usuario y id del mismo
@@ -85,7 +87,6 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
         let desVC = mainStoryboard.instantiateViewController(withIdentifier: "CollectionViewProductos") as! CollectionViewControllerProductos
         idCat = categorias[indexPath.row].id
         print("ID FILA -> ", self.idCat)
-        desVC.idCategoria = categorias[indexPath.row].id
         print("ID PASADA -> ", desVC.idCategoria)
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = .red
