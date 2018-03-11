@@ -902,6 +902,7 @@
                                             <outlet property="fecha" destination="ijS-TL-JAG" id="GWm-cB-p4F"/>
                                             <outlet property="idMember" destination="Zk5-vC-o7n" id="lx9-YT-qtB"/>
                                             <outlet property="idTicket" destination="BHn-Pq-0I2" id="mId-IQ-0ZQ"/>
+                                            <segue destination="iWc-PM-OYJ" kind="show" id="aNV-Qh-3p6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -934,6 +935,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyB-n3-blV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1681.1594202898552" y="1278.2608695652175"/>
+        </scene>
+        <!--Ticket Detail View Controller-->
+        <scene sceneID="PsI-D4-GRo">
+            <objects>
+                <viewController storyboardIdentifier="TicketDeatilStoryboard" id="iWc-PM-OYJ" customClass="TicketDetailViewController" customModule="ProyectoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ye2-8S-MPB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hola" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suH-Ar-CV6">
+                                <rect key="frame" x="172" y="54" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5TF-Mh-pZz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e36-xp-mCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="1269"/>
         </scene>
     </scenes>
     <resources>

@@ -18,6 +18,7 @@
 		7377F2EB204D369A00B2689D /* PedidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377F2EA204D369A00B2689D /* PedidoTableViewCell.swift */; };
 		7377F2ED204D36D000B2689D /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377F2EC204D36D000B2689D /* TicketViewController.swift */; };
 		7381800E2050302300DC2AC6 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7381800D2050302300DC2AC6 /* TicketTableViewCell.swift */; };
+		73F32F992055776400950E2E /* TicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F32F982055776400950E2E /* TicketDetailViewController.swift */; };
 		9A1AFC37204827D900F911F6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC36204827D900F911F6 /* Product.swift */; };
 		9A1AFC392048285600F911F6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC382048285600F911F6 /* Ticket.swift */; };
 		9A1AFC3B204828CA00F911F6 /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1AFC3A204828CA00F911F6 /* TicketDetail.swift */; };
@@ -70,6 +71,7 @@
 		7377F2EA204D369A00B2689D /* PedidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoTableViewCell.swift; sourceTree = "<group>"; };
 		7377F2EC204D36D000B2689D /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		7381800D2050302300DC2AC6 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
+		73F32F982055776400950E2E /* TicketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewController.swift; sourceTree = "<group>"; };
 		9A1AFC36204827D900F911F6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9A1AFC382048285600F911F6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		9A1AFC3A204828CA00F911F6 /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				9A442FA6204EE4EB00CBF560 /* ViewControllerDescripcion.swift */,
 				9A442FA8204F088200CBF560 /* CollectionViewControllerProductos.swift */,
 				9A442FAC204F08F700CBF560 /* CustomCollectionViewCellProductos.swift */,
+				73F32F982055776400950E2E /* TicketDetailViewController.swift */,
 			);
 			path = Presentador;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA7473A2050DBA600BE2ABB /* User.swift in Sources */,
+				73F32F992055776400950E2E /* TicketDetailViewController.swift in Sources */,
 				9A2B50662049BA7F0078481E /* Cache.swift in Sources */,
 				9A34F9C9204A072900513D00 /* CustomCollectionViewCell.swift in Sources */,
 				9A685B142047E4C000BED5DD /* OnHttpResponse.swift in Sources */,

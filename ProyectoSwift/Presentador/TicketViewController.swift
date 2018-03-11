@@ -11,10 +11,12 @@ import UIKit
 class TicketViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OnHttpResponse {
     
     var tickets = [Ticket]()
+    var ticketDetail = [TicketDetail]()
     var productosSeleccionados = [ProductPedidos]()
     var token = ""
     var fecha = ""
     var idPe = ""
+    var idTicket = ""
     
     @IBOutlet weak var miTableView: UITableView!
     
@@ -125,7 +127,27 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         cell?.fecha.text = tickets[indexPath.row].date
         cell?.idMember.text = tickets[indexPath.row].id_member
         
+        idTicket = tickets[indexPath.row].id
+        
+        if (cell?.isSelected)! {
+            self.idTicket = tickets[indexPath.row].id
+            print("Id ticket -> ", idTicket)
+        }
+        
         return cell!
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is TicketDetailViewController{
+            let tdvc = segue.destination as? TicketDetailViewController
+            tdvc?.token = token
+            tdvc?.idTicketPasado = idTicket
+            tdvc?.tickets.append(contentsOf: tickets)
+            tdvc?.ticketDetail.append(contentsOf: ticketDetail)
+            print("Print id ->", idTicket)
+            print("Print id ->", tdvc?.idTicketPasado)
+        }
         
     }
     
