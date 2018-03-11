@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct TicketDetail {
-    var id : Int
-    var id_ticket : Int
-    var id_product : Int
-    var quantity : Int
-    var price : Double
+struct TicketDetail : Codable {
+    var id : String
+    var id_ticket : String
+    var id_product : String
+    var quantity : String
+    var price : String
 }

@@ -57,6 +57,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func onDataReceived(data: Data) {
+        
         let respuesta = RestJsonUtil.jsonToDict(data : data)
         //print("Respuesta --->", respuesta!)
         
@@ -68,6 +69,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         }
         print("Ticket en pedidoview", tickets.count)
         //print("asdasd en pedido view", tickets[0].id)
+        
     }
     
     func onErrorReceivingData(message: String){
@@ -81,6 +83,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
         miTicket.request()
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TicketViewController{
             let tvc = segue.destination as? TicketViewController
@@ -89,6 +92,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             tvc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
             tvc!.fecha = fecha
             tvc!.idPe = idPe
+            
             print("Los tickets que mando por segue ->", tickets.count)
             print("Fecha que paso ->", fecha)
             print("id que paso ->", idPe)
@@ -188,15 +192,14 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            // Delete the row from the data source
-            self.pedidos.remove(at: indexPath.row)
+            self.productosSeleccionados.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+        else if editingStyle == .insert {
         }
         
         func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-            // Return false if you do not want the specified item to be editable.
+            
             return true
         }
     }

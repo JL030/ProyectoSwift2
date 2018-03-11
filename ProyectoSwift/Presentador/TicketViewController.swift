@@ -28,19 +28,22 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         
         //let date = String(describing: Date())
         //print("La fecha -->", date)
+        let quantity = "1"
         let id_member = "2"
         let id_client = ""
+        let id = ""
         
         for prod in self.productosSeleccionados {
             
             var newticket = [String: Any]()
-            newticket = ["date": fecha, "id_member": idPe, "id_client": id_client]
+            newticket = ["id": id,"date": fecha, "id_member": idPe, "id_client": id_client]
             
-            //arrayticket = [Ticket]()
-            /*arrayticket += [
-             Ticket(id: "1", date: "datemia", id_member: "1")
-             ]*/
+            var arrayticket = [Ticket]()
+            arrayticket += [
+                Ticket(id: id, date: fecha, id_member: idPe)
+             ]
             
+            tickets.append(contentsOf: arrayticket)
             
             guard let insertarTicket = ClienteHttp.init(target: "setTicket", authorization: "Bearer " + token, responseObject: self, "POST", newticket) else {
                 return
@@ -50,7 +53,7 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
             
             
             var datos = [String: Any]()
-            datos = ["id_product": prod.id_producto, "quantity": 3, "price": prod.precio]
+            datos = ["id_product": prod.id_producto, "quantity": quantity, "price": prod.precio]
             
             guard let insertarTicketDetail = ClienteHttp.init(target: "setTicketDetail", authorization: "Bearer " + token, responseObject: self, "POST", datos) else {
                 return
@@ -59,7 +62,6 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
             
             
         }
-        
         
         descargarTicket()
         print("token ", token)
@@ -83,6 +85,8 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
          }
          print("Ticket ", tickets.count)
          print("asdasd", tickets[0].id)*/
+
+        
     }
     
     func onErrorReceivingData(message: String){
@@ -102,7 +106,7 @@ class TicketViewController: UIViewController, UITableViewDataSource, UITableView
         }
         miTicket.request()
     }
-    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tickets.count
