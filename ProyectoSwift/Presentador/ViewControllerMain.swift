@@ -28,6 +28,7 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
         descargarCategorias()
         download()
         performSegue(withIdentifier: "seguePrincipal", sender: self)
+        performSegue(withIdentifier: "segueAP", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,6 +90,11 @@ class ViewControllerMain: UIViewController, OnHttpResponse {
             token?.userPrin = userMain
             token?.idPrin = idMain
             
+        }
+        
+        if segue.destination is CollectionVerProductos{
+            let vc = segue.destination as? CollectionVerProductos
+            vc!.token = self.tokenMain
         }
         
         if segue.destination is ViewController {
