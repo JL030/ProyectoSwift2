@@ -24,6 +24,11 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if productosSeleccionados.count == 0{
+            totalPrecio.text = "0"
+        }else{
+            totalPrecio.text = String(productosSeleccionados.count)
+        }
         collectionView.dataSource = self
         collectionView.delegate = self
         print("CAT nueva -> ", self.idCategoria)
@@ -60,21 +65,31 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell1", for: indexPath) as! CustomCollectionViewCellProductos
         let main : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let desVC = main.instantiateViewController(withIdentifier: "desc") as! ViewControllerDescripcion
-        if cell.añadir.isSelected{
-            desVC.index = indexPath.row
-        }
         totalPrecio.text = String(productosSeleccionados.count)
         print("Cambiado")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // Volver Al principal
         if segue.destination is ViewControllerPrincipal{
             let vc = segue.destination as? ViewControllerPrincipal
             vc!.categorias.append(contentsOf: self.categorias)
             vc!.token = self.token
             vc!.idPrin = self.idPro
             vc!.userPrin = self.userPro
+        }
+        // Descripcion
+        if segue.destination is ViewControllerDescripcion {
+            let item = sender as? UICollectionViewCell
+            let vc = segue.destination as? ViewControllerDescripcion
+            let select = collectionView.indexPath(for: item!)
+            vc!.labelProducto.text = self.productosFiltrados[select!.row].product
+            print("LABEL -> ", self.productosFiltrados[select!.row].product)
+            print("Descripcion", self.productosFiltrados[select!.row].description)
+            vc!.labelDescripcion.text = self.productosFiltrados[select!.row].description
+            vc!.imagen = self.productosFiltrados[select!.row].imagen
+            vc!.productos.append(contentsOf: self.productos)
         }
         
         // PEDIDO VIEW CONTROLLER
@@ -86,17 +101,11 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc!.productos.append(contentsOf: self.productos)
             vc!.productos.append(contentsOf: self.productos)
             vc?.userPe = userPro
+            vc!.idCategoria = self.idCategoria
+            vc!.cantidad = self.totalPrecio.text!
             vc?.idPe = idPro
         }
-        // DESCRIPCIÓN PRODUCTO
-        if segue.destination is ViewControllerDescripcion{
-            let vc = segue.destination as? ViewControllerDescripcion
-            vc?.labelProducto.text = productos[vc!.index].product
-            let defaultLink = "https://bbdd-javi030.c9users.io/IosPanaderia/images/"
-            let completo = defaultLink + self.productos[vc!.index].imagen
-            vc?.imagenProducto.downloadedFrom(link: completo)
-            vc?.labelDescripcion.text = productos[vc!.index].description
-        }
+
         
     }
 }

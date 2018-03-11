@@ -14,11 +14,13 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     var tickets = [Ticket]()
     var resultado = 0.0
     var userPe = ""
+    var cantidad = ""
     var idPe = ""
     // AÑADIDO POR JAVI
     var token = ""
     var productosSeleccionados = [ProductPedidos]()
     var productos = [Product]()
+    var idCategoria = ""
     
     //Campos para ticket
     var fecha = String(describing: Date())
@@ -104,6 +106,8 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             let vc = segue.destination as? CollectionViewControllerProductos
             vc!.productos.append(contentsOf: self.productos)
             vc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
+            vc!.token = self.token
+            vc!.idCategoria = self.idCategoria
         }
     }
     
