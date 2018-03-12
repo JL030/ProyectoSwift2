@@ -21,6 +21,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
     var productosSeleccionados = [ProductPedidos]()
     var productos = [Product]()
     var idCategoria = ""
+    var categorias = [Family]()
     
     //Campos para ticket
     var fecha = String(describing: Date())
@@ -108,6 +109,7 @@ class PedidoViewController: UIViewController, UITableViewDataSource, UITableView
             vc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
             vc!.token = self.token
             vc!.idCategoria = self.idCategoria
+            vc!.categorias.append(contentsOf: self.categorias)
         }
     }
     

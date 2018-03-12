@@ -78,20 +78,9 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc!.token = self.token
             vc!.idPrin = self.idPro
             vc!.userPrin = self.userPro
+            vc!.productosSeleccionados.append(contentsOf: self.productosSeleccionados)
+            vc!.categorias.append(contentsOf: self.categorias)
         }
-        // Descripcion
-        if segue.destination is ViewControllerDescripcion {
-            let item = sender as? UICollectionViewCell
-            let vc = segue.destination as? ViewControllerDescripcion
-            let select = collectionView.indexPath(for: item!)
-            vc!.labelProducto.text = self.productosFiltrados[select!.row].product
-            print("LABEL -> ", self.productosFiltrados[select!.row].product)
-            print("Descripcion", self.productosFiltrados[select!.row].description)
-            vc!.labelDescripcion.text = self.productosFiltrados[select!.row].description
-            vc!.imagen = self.productosFiltrados[select!.row].imagen
-            vc!.productos.append(contentsOf: self.productos)
-        }
-        
         // PEDIDO VIEW CONTROLLER
         if segue.destination is PedidoViewController{
             let vc = segue.destination as? PedidoViewController
@@ -99,7 +88,7 @@ class CollectionViewControllerProductos: UIViewController, UICollectionViewDataS
             vc?.productosSeleccionados.append(contentsOf: productosSeleccionados)
             print("PRO ENVIADOS -> ", vc?.productosSeleccionados.count)
             vc!.productos.append(contentsOf: self.productos)
-            vc!.productos.append(contentsOf: self.productos)
+            vc!.categorias.append(contentsOf: self.categorias)
             vc?.userPe = userPro
             vc!.idCategoria = self.idCategoria
             vc!.cantidad = self.totalPrecio.text!

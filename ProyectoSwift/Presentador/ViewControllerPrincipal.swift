@@ -36,6 +36,7 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
     var categorias = [Family]()
     var imagenes : [UIImage] = []
     var productos = [Product]()
+    var productosSeleccionados = [ProductPedidos]()
     var idCat : String = ""
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
         print("PRODUCTOS RECIBIDOS -> ", productos.count)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return categorias.count
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,7 +77,7 @@ class ViewControllerPrincipal: UIViewController, OnHttpResponse, UICollectionVie
             vc?.productos.append(contentsOf: self.productos)
             vc!.idCategoria = String(describing: indexPath!.row + 1)
             print("ID CAT YEEH -> ", idCat )
-            
+            vc!.productosSeleccionados.append(contentsOf: productosSeleccionados)
             //nombre de usuario y id del mismo
             vc?.userPro = userPrin
             vc?.idPro = idPrin
